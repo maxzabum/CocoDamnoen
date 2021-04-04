@@ -11,7 +11,7 @@ const Homepage =()=>{
     return(
         <div className="main-homepage-container">
             <Grid container className="item-container landing-header">
-                <img src={Landingheader}/>
+                <img src={Landingheader} alt="img"/>
                 <div className="text-header">
                     <p>COCO</p>
                     <p>DAMNOEN</p>
@@ -33,19 +33,19 @@ const Homepage =()=>{
                         <Grid item xs={12} sm={6} className='text-right'>
                             <div>
                                 <div className='circle-container'>
-                                    <img src={BicepsPNG} style={{width:74,height:70}}/>
+                                    <img src={BicepsPNG} style={{width:74,height:70}} alt="img"/>
                                 </div>
                                 <p>HEALTHY</p>
                             </div>
                             <div>
                                 <div className='circle-container'>
-                                    <img src={BagSVG} style={{width:53.36,height:69.78}}/>
+                                    <img src={BagSVG} style={{width:53.36,height:69.78}} alt="img"/>
                                 </div>
                                     <p>CONVENIENT</p>
                             </div>
                             <div>
                                 <div className='circle-container'>
-                                    <img src={CoconutPNG} style={{width:54.55,height:70}}/>
+                                    <img src={CoconutPNG} style={{width:54.55,height:70}} alt="img"/>
                                 </div>
                                 <p>DELICIOUS</p>
                             </div>
@@ -55,7 +55,7 @@ const Homepage =()=>{
                 <div className='bottom-grid'>
                     <Grid container>
                         <Grid item xs={12} sm={6} className='text-left'>
-                            <img src={LandingOurstory} className='image-ourstory'/>
+                            <img src={LandingOurstory} className='image-ourstory' alt="img"/>
                         </Grid>
                         <Grid item xs={12} sm={6} className='text-right'>
                             <p>OUR STORY</p>
@@ -67,7 +67,7 @@ const Homepage =()=>{
                                 health. Our quality product is made in Thailand. 
                                 We capture the freshness of the coconut juice.
                             </p>
-                            <button>SEE OUR STORY</button>
+                            {/* <button>SEE OUR STORY</button> */}
                         </Grid>
                     </Grid>
                 </div>
