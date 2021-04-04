@@ -74,10 +74,8 @@ const Homepage =()=>{
             </Grid>
             <Grid container className="item-container landing-product">
                 <div style={{backgroundColor:"yellow"}}>
-                    <Carditem/>
                 </div>
                 <div className="product-ingredients" style={{backgroundColor:"yellow"}}>
-                    <Carditem/>
                 </div>
             </Grid>
             <Grid container className="item-container landing-prooerties">
