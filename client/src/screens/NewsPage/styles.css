@@ -1,0 +1,16 @@
+.main-newspage-container {
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+}
+.main-newspage-container .item-container {
+  background-color: cadetblue;
+}
+.main-newspage-container .news-header {
+  height: 100vh;
+  background-color: chartreuse;
+}
+.main-newspage-container .news-container {
+  height: 200vh;
+  background-color: chocolate;
+}

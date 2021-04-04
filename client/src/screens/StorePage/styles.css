@@ -1,0 +1,14 @@
+.main-store-container {
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+}
+
+.main-store-container .store-header {
+  height: 100vh;
+  background-color: chartreuse;
+}
+.main-store-container .store-container {
+  height: 200vh;
+  background-color: chocolate;
+}

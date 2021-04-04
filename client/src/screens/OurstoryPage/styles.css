@@ -1,0 +1,28 @@
+.main-ourstorypage-container {
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+}
+.main-ourstorypage-container .item-container {
+  background-color: cadetblue;
+}
+.main-ourstorypage-container .ourstory-header {
+  height: 100vh;
+  background-color: chartreuse;
+}
+.main-ourstorypage-container .ourstory-1 {
+  height: 100vh;
+  background-color: chocolate;
+}
+.main-ourstorypage-container .ourstory-2 {
+  background-color: coral;
+  height: 100vh;
+}
+.main-ourstorypage-container .ourstory-3 {
+  background-color: rgb(188, 255, 80);
+  height: 100vh;
+}
+.main-ourstorypage-container .ourstory-contact {
+  background-color: rgb(218, 208, 79);
+  height: 40vh;
+}

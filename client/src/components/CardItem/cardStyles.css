@@ -1,0 +1,12 @@
+.container {
+  /* position: relative; */
+}
+.container .card-content {
+  width: 300px;
+  /* position: absolute;
+  top: 30%;
+  left: 35%; */
+}
+.img-content {
+  width: 150px;
+}

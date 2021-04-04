@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Baby-girly";
+  src: local("Baby-girly"), url(./fonts/BABYGIRLY.otf) format("truetype");
+}
+* {
+  margin: 0;
+  font-family: Baby-girly;
+}
+.App {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  position: relative;
+}
