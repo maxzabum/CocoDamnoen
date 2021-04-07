@@ -2,6 +2,10 @@
   font-family: "Baby-girly";
   src: local("Baby-girly"), url(./fonts/BABYGIRLY.otf) format("truetype");
 }
+@font-face {
+  font-family: "ComicSansMS";
+  src: local("ComicSansMS"), url(./fonts/ComicSansMS3.ttf) format("truetype");
+}
 * {
   margin: 0;
   font-family: Baby-girly;

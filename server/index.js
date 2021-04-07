@@ -2,15 +2,18 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
+import morgan from 'morgan'
 import Users from "./routes/users.js";
 //Router
 const app = express();
-app.use("/users", Users);
 // app.use("/users", Users);
-
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({  extended: true }));
 app.use(cors());
+app.use(morgan('dev') )
+app.use("/users", Users);
 
 //MongoDB
 const CONNECTION_URL =

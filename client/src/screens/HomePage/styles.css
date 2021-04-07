@@ -1,11 +1,9 @@
 .main-homepage-container {
   display: flex;
   flex-direction: column;
-  background-color: burlywood;
+  letter-spacing: 0.1rem;
 }
-.main-homepage-container .item-container {
-  background-color: cadetblue;
-}
+
 .main-homepage-container .landing-header {
   position: relative;
   height: 100vh;
@@ -44,15 +42,16 @@
   margin-bottom: 10px;
 }
 .main-homepage-container .landing-ourstory {
-  height: 100vh;
+  padding: 50px 0px;
+  height: auto;
   background-color: rgb(255, 255, 255);
   display: flex;
+  flex-direction: column;
 }
 .landing-ourstory .top-grid {
   height: 30%;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -65,6 +64,7 @@
   font-size: 50px;
   font-weight: bold;
   padding-right: 80px;
+  letter-spacing: 0.1rem;
 }
 .landing-ourstory .top-grid .text-right {
   display: flex;
@@ -78,69 +78,227 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
+  margin: 20px 30px;
 }
 .landing-ourstory .text-right .circle-container {
-  background-color: rgb(169, 147, 113);
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  background-color: #a2a97f;
+  width: 110px;
+  height: 110px;
+  border-radius: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .landing-ourstory .bottom-grid {
-  height: 70%;
+  height: auto;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 .landing-ourstory .bottom-grid .text-right {
   display: flex;
   flex-direction: column;
+  align-self: center;
+  padding-left: 80px;
 }
 .landing-ourstory .bottom-grid .text-right :nth-child(1) {
   font-size: 60px;
   color: #4e4e4e;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .landing-ourstory .bottom-grid .text-right :nth-child(2) {
-  font-size: 25px;
-  width: 450px;
-  font-weight: 400;
-  padding-bottom: 50px;
+  font-size: 24px;
+  width: 70%;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  margin-bottom: 40px;
   color: #6e6d6d;
 }
 
+.landing-ourstory .bottom-grid .text-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .image-ourstory {
-  height: 65vh;
+  padding: 50px 0px;
+  max-width: 50vw;
+  height: 80vh;
 }
 .landing-ourstory .bottom-grid .text-right button {
   align-self: flex-start;
-  width: 220px;
-  height: 60px;
+  width: 160px;
+  height: 45px;
   background-color: #4e4e4e;
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
 }
 .main-homepage-container .landing-product {
-  background-color: coral;
-  height: 100vh;
+  background-color: #fff;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+  /* background-image: url(./bg_product-01.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat; */
 }
-.landing-product .product-ingredient {
+.main-homepage-container .landing-product::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  background-image: url(../../images/bg_product-01.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
-.main-homepage-container .landing-prooerties {
-  background-color: rgb(188, 255, 80);
-  height: 100vh;
+.landing-product .product-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+.landing-product .product-header :nth-child(1) {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+.landing-product .product-header :nth-child(2) {
+  width: 60%;
+  color: #6e6d6d;
+
+  line-height: 2rem;
+  font-size: 25px;
+}
+.landing-product .product-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.landing-product .product-container .product-img {
+  margin-right: 40px;
+}
+.landing-product .product-container .product-ingredient {
+  display: grid;
+  margin-left: 40px;
+  grid-template-columns: 240px 240px;
+  grid-auto-rows: 300px;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  align-self: center;
+}
+
+.image-product {
+  width: 620px;
+  height: auto;
+}
+.main-homepage-container .landing-properties {
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+}
+.main-homepage-container .landing-properties .left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+}
+.main-homepage-container .landing-properties .left-container .text-container {
+  width: 40vw;
+}
+.main-homepage-container
+  .landing-properties
+  .left-container
+  .text-container
+  :nth-child(1) {
+  font-size: 54px;
+  margin-bottom: 40px;
+  color: #4e4e4e;
+}
+.main-homepage-container
+  .landing-properties
+  .left-container
+  .text-container
+  :nth-child(2) {
+  font-size: 24px;
+  letter-spacing: 0.1rem;
+  margin-bottom: 30px;
+  color: #6e6d6d;
+}
+.main-homepage-container .landing-properties .left-container .box-content {
+  display: flex;
+}
+.main-homepage-container
+  .landing-properties
+  .left-container
+  .box-content
+  .box-container {
+  position: relative;
+  margin: 20px;
+}
+.main-homepage-container
+  .landing-properties
+  .left-container
+  .box-content
+  .box-container
+  > img {
+  width: 100%;
+  height: 100%;
+}
+.main-homepage-container
+  .landing-properties
+  .left-container
+  .box-content
+  .box-container
+  > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 100px;
+  color: #fff;
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 0.05rem;
+  line-height: 1.5rem;
+}
+.main-homepage-container .landing-properties .right-container {
+  align-self: center;
+  width: 50vw;
+}
+.main-homepage-container .landing-properties .right-container > img {
+  width: 100%;
+  height: 100%;
 }
 .main-homepage-container .landing-pictures {
-  background-color: rgb(80, 220, 255);
-  height: 100vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-homepage-container .landing-pictures > p {
+  font-size: 120px;
+  margin-bottom: 80px;
+  color: #4e4e4e;
+}
+.main-homepage-container .landing-pictures .imgs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-homepage-container .landing-pictures .imgs-container > img {
+  margin: 10px;
+  width: 23%;
+  height: 100%;
 }
