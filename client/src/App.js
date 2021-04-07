@@ -7,7 +7,7 @@ import Storepage from './screens/StorePage/Storepage'
 import Ourstorypage from "./screens/OurstoryPage/Ourstorypage";
 import Contactus from "./components/Footer/Contactus";
 import {Switch , Route} from 'react-router-dom'
-import DetailNewpage from './screens/NewsPage/DetailNewsPage/Detailnews'
+import DetailNew from './screens/NewsPage/DetailNewsPage/Detailnews'
 const App = (props) => {
   const {location} = props
   return (
@@ -20,24 +20,21 @@ const App = (props) => {
             component={HomePage}
             />
             <Route
-            exact
             path="/ourstory"
             component={Ourstorypage}
             />
             <Route
-            exact
+            // exact
             path="/news"
             component={Newspage}
             />
             <Route
-            exact
             path="/store"
             component={Storepage}
             />
+            
             <Route
-            exact
-            path="/news/detail"
-            component={DetailNewpage}
+            component={DetailNew}
             />
         {/* <Ourstorypage/> */}
         {/* <Newspage/> */}

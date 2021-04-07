@@ -29,7 +29,7 @@ const Homepage =()=>{
                     <p>JELLY DRINK</p>
                 </div>
             </div>
-            <div container className="item-container landing-ourstory">
+            <div className="item-container landing-ourstory">
                 <div className='top-grid'>
                         <div className='text-left'>
                             <div>
