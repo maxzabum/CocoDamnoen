@@ -47,6 +47,7 @@
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .landing-ourstory .top-grid {
   height: 30%;
@@ -54,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .landing-ourstory .top-grid .text-left {
   color: #4e4e4e;
@@ -93,8 +95,8 @@
   height: auto;
   width: 100%;
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
 }
 .landing-ourstory .bottom-grid .text-right {
   display: flex;

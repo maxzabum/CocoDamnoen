@@ -1,6 +1,5 @@
 .contactus-container {
   background-image: url(./contact-22.png);
-  background-color: rgb(240, 240, 240);
   background-size: cover;
   display: flex;
   flex-direction: column;

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: auto;
   background-color: rgb(240, 240, 240);
 }
 .main-storepage-container .store-header {
@@ -97,7 +98,7 @@
   color: #6e6d6d;
 }
 .store-recommended-container {
-  height: 100vh;
+  height: auto;
   display: flex;
   /* padding: 0px 200px; */
   /* flex-wrap: wrap; */

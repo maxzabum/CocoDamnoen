@@ -19,9 +19,7 @@ const Navbar = ()=>{
                 <li className="product-button m-r-10" onClick={()=>history.push('/store')}>
                     <a>STORE</a>
                 </li>
-                <li className="product-button m-r-10">
-                    <img src={ThaiSVG}/>
-                </li>
+                
             </ul>
         </div>
     )

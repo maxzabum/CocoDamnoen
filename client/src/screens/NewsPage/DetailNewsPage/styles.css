@@ -5,14 +5,18 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  height: auto;
   margin-top: 150px;
+  margin-bottom: 50px;
 }
 .main-detailnewpage-container > * {
   margin: 20px 0px;
 }
-.goback p {
+.goback {
   color: #a99371;
   font-size: 25px;
+  display: flex;
+  align-items: center;
 }
 .detailnew-header > :first-child {
   color: #4e4e4e;

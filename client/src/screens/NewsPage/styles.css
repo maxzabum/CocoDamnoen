@@ -98,7 +98,7 @@
   color: #6e6d6d;
 }
 .news-recommended-container {
-  height: 100vh;
+  height: auto;
   display: flex;
   /* padding: 0px 200px; */
   /* flex-wrap: wrap; */
