@@ -1,12 +1,26 @@
-.container {
-  /* position: relative; */
+.card-container {
+  position: relative;
 }
-.container .card-content {
-  width: 300px;
-  /* position: absolute;
-  top: 30%;
-  left: 35%; */
+.card-container .card-content {
+  position: absolute;
+  left: 50%;
+  color: #4e4e4e;
+  width: 80%;
+  transform: translate(-50%, -45%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.img-content {
-  width: 150px;
+.card-container .card-content > img {
 }
+.card-container .card-content > p {
+  height: 100%;
+}
+.card-container .card-content > * {
+  padding: 10px 0px;
+}
+/* .img-content {
+  width: auto;
+  height: auto;
+} */

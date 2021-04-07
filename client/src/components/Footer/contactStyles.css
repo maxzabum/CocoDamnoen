@@ -1,8 +1,98 @@
 .contactus-container {
+  background-image: url(./contact-22.png);
+  background-color: rgb(240, 240, 240);
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  background-color: rgb(228, 223, 159);
 }
 .contactus-container .item-contactus {
-  height: 40vh;
+  height: 45vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.contactus-container .item-contactus .contact-detail {
+  display: flex;
+  margin-bottom: 50px;
+}
+.contactus-container .item-contactus .left-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  margin-right: 100px;
+  color: #fff;
+}
+.contactus-container .item-contactus .left-container :nth-child(1) {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.contactus-container .item-contactus .left-container :nth-child(n + 2) {
+  font-size: 18px;
+  letter-spacing: 0.05rem;
+  line-height: 1.8rem;
+}
+.contactus-container .item-contactus .right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: #fff;
+}
+.contactus-container .item-contactus .right-container > p {
+  font-size: 50px;
+}
+.contactus-container .item-contactus .right-container input {
+  background: transparent;
+  border: 2px solid #fff;
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+  padding: 10px 20px;
+  padding-right: 150px;
+  border-radius: 15px 0px 0px 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.contactus-container .item-contactus .email-subscribe-container input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #fff;
+  transition: all 0.3s ease;
+}
+.contactus-container .item-contactus .right-container button {
+  border-radius: 0px 15px 15px 0px;
+  background-color: #fff;
+  color: #4e4e4e;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+}
+.contactus-container .item-contactus .right-container button:hover {
+  outline: none;
+  box-shadow: 0 0 0 4px #fff;
+  transition: all 0.3s ease;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+.contactus-container
+  .item-contactus
+  .right-container
+  .follow-buttons-container
+  :nth-child(2n + 2) {
+  margin: 0px 40px;
+}
+.copyright {
+  color: #fff;
+  margin-bottom: 10px;
 }
