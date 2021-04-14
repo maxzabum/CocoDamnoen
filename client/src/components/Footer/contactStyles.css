@@ -1,33 +1,44 @@
 .contactus-container {
   background-image: url(./contact-22.png);
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
 }
 .contactus-container .item-contactus {
-  height: 45vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
+  padding-top: 120px;
+  padding-bottom: 20px;
 }
 .contactus-container .item-contactus .contact-detail {
   display: flex;
-  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.contactus-container .item-contactus .contact-detail div{
+  margin: 0px 40px;
 }
 .contactus-container .item-contactus .left-container {
   /* display: flex;
   flex-direction: column;
   justify-content: center; */
-  margin-right: 100px;
+  text-align: center;
+  /*margin-right: 100px;*/
+  margin-bottom: 20px!important;
+
   color: #fff;
 }
 .contactus-container .item-contactus .left-container :nth-child(1) {
-  font-size: 50px;
+  font-size: clamp(25px, 3vw, 50px);
   margin-bottom: 20px;
 }
 .contactus-container .item-contactus .left-container :nth-child(n + 2) {
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   letter-spacing: 0.05rem;
   line-height: 1.8rem;
 }
@@ -35,18 +46,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  text-align: center;
   color: #fff;
 }
-.contactus-container .item-contactus .right-container > p {
-  font-size: 50px;
+.contactus-container .item-contactus .right-container .email-subscribe-container > p {
+  font-size: clamp(25px, 3vw, 50px);
+}
+.contactus-container .item-contactus .email-subscribe-container{
+  margin: 20px 0!important;
 }
 .contactus-container .item-contactus .right-container input {
   background: transparent;
   border: 2px solid #fff;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   letter-spacing: 0.1rem;
   padding: 10px 20px;
-  padding-right: 150px;
+  padding-right: clamp(50px, 10vw, 150px);
   border-radius: 15px 0px 0px 15px;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -60,7 +75,7 @@
   border-radius: 0px 15px 15px 0px;
   background-color: #fff;
   color: #4e4e4e;
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   padding: 10px 20px;
   border: 2px solid #fff;
 }
@@ -88,10 +103,27 @@
   .item-contactus
   .right-container
   .follow-buttons-container
-  :nth-child(2n + 2) {
+  > img{
   margin: 0px 40px;
 }
 .copyright {
   color: #fff;
   margin-bottom: 10px;
+  font-size: clamp(10px, 3vw, 16px);
+}
+@media (max-width: 600px) {
+  .contactus-container
+  .item-contactus
+  .right-container
+  .follow-buttons-container
+  > img{
+    margin: 0px 15px;
+  }
+  .contactus-container
+  .item-contactus
+  .right-container
+  .follow-buttons-container {
+    margin: 0!important;
+  }
+
 }
