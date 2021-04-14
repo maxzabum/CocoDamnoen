@@ -12,8 +12,7 @@
   align-items: center;
   text-align: center;
 }
-.card-container .card-content > img {
-}
+
 .card-container .card-content > p {
   height: 100%;
 }
@@ -24,3 +23,11 @@
   width: auto;
   height: auto;
 } */
+@media (max-width: 800px) {
+  .img-content {
+    /*height: max(50%, 650px)!important;*/
+  }
+  .product-img{
+    margin-right: 0px!important;
+  }
+}

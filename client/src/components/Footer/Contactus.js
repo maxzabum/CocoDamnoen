@@ -19,8 +19,9 @@ const Contactus =()=>{
                         <p>sales@cocodamnoen.com</p>
                     </div>
                     <div className="right-container">
-                        <p>NEWSLETTER</p>
+
                         <div className="email-subscribe-container">
+                            <p>NEWSLETTER</p>
                             <input type="text" placeholder="EMAIL ADDRESS"/>
                             <button>SUBSCRIBE</button>
                         </div>
