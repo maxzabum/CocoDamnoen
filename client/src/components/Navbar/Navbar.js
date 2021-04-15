@@ -10,8 +10,7 @@ const Navbar = ({isActive, onClick,active,setActive , screenWidth,...props}) => 
     const history = useHistory()
     return (
         <div>
-                <div className={'nav-container'} onClick={()=>{
-                }}>
+                <div className={'nav-container'}>
                     {screenWidth > 600 ?
                         <div className={'nav-container'}>
                             <img src={Logo} className="logo" onClick={() => history.push('/')} alt="img"/>
