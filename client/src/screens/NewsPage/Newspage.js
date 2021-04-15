@@ -84,7 +84,7 @@ const Newspage =(props)=>{
             //   </li>
             );
         }
-        
+        return null
    });
     return(
         <Switch >
@@ -155,8 +155,7 @@ const Newspage =(props)=>{
                                         />
                                        ) 
                                     }
-                                    
-                                    
+                                    return null
                                 })
                                     
                                 }
@@ -180,8 +179,7 @@ const Newspage =(props)=>{
                                         />
                                        ) 
                                     }
-                                    
-                                    
+                                    return null
                                 })
                                     
                                 }

@@ -4,7 +4,7 @@ import OurStoryIMG1 from './our_story_content1-07.png'
 import OurStoryIMG2 from './our_story_content2-08.png'
 import OurStoryIMG3 from './our_story_content3-09.png'
 import "./styles.css"
-const Ourstorypage =()=>{
+const Ourstorypage =({screenWidth,...props})=>{
     return(
         <div className="main-ourstorypage-container">
             <div className="item-container ourstory-header">
@@ -26,7 +26,7 @@ const Ourstorypage =()=>{
                     the freshness of the coconut juice.
                 </p>
                 <div className="content-container">
-                    <img src={OurStoryIMG1} atl="img"/>
+                    <img src={OurStoryIMG1} alt="img"/>
                     <div className="content-text-container">
                         <div className="number-toppic">
                             <p>1</p>
@@ -40,8 +40,28 @@ const Ourstorypage =()=>{
                 </div>
             </div>
             <div className="item-container ourstory-1">
-            <div className="content-container">
-                    <div className="content-text-container .reverse">
+            {screenWidth > 1024 ?
+                <div className="content-container">
+                <div className="content-text-container reverse">
+                    <div className="number-toppic">
+                        <p>2</p>
+                    </div>
+                    <p>Natural preservation method</p>
+                    <p> &nbsp;&nbsp;&nbsp;&nbsp;Our research team utilize preservation methods that 
+                        are 100% natural, with no additives or preservatives in order to keep our 
+                        mission to bring fresh essentials to your family. Quality foods preserved 
+                        for your convenience and ease-of-use, while still delivering all the taste 
+                        and nutrition of fresh foods. That’s why we utilize several preservation 
+                        methods that are 100% natural, with no additives or preservatives, that 
+                        maintain many of the qualities that make fresh foods so desirable.
+                    </p>
+                </div>
+                <img src={OurStoryIMG2} alt="img"/>
+                </div> 
+                :
+                <div className="content-container">
+                    <img src={OurStoryIMG2} alt="img"/>
+                    <div className="content-text-container reverse">
                         <div className="number-toppic">
                             <p>2</p>
                         </div>
@@ -55,12 +75,13 @@ const Ourstorypage =()=>{
                             maintain many of the qualities that make fresh foods so desirable.
                         </p>
                     </div>
-                    <img src={OurStoryIMG2} atl="img"/>
+                    
                 </div>
+            }
             </div>
             <div className="item-container ourstory-1">
             <div className="content-container">
-                    <img src={OurStoryIMG3} atl="img"/>
+                    <img src={OurStoryIMG3} alt="img"/>
                     <div className="content-text-container">
                         <div className="number-toppic">
                             <p>3</p>
