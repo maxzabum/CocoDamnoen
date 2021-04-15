@@ -1,12 +1,9 @@
-import { Container, Grid } from '@material-ui/core'
 import React from 'react'
 import "./styles.css"
 import {
     Switch,
     Route,
-    Link,
     useRouteMatch,
-    useParams,
     useHistory
   } from "react-router-dom";
 import Landingheader from '../../images/landing_page-01.png'
@@ -79,12 +76,8 @@ const Newspage =(props)=>{
                     top={"45%"}
                     onClick={()=>history.push(`${url}/${newse.id}`)}
                 />
-            //   <li key={newse.id}>
-            //     <Link to={`${url}/${newse.id}`}>{newse.header}</Link>
-            //   </li>
             );
         }
-        
    });
     return(
         <Switch >
@@ -101,22 +94,11 @@ const Newspage =(props)=>{
                 </div>
                 <div className="news-container">
                     <div className="news-main-container">
-                    {/* <Link to={`${url}/eiei`}>Shoes</Link> */}
-                    {/* {linkList} */}
-                        {/* <Route path={`${match.path}/:topicId`}
-                        render={(props) => <DetailNew {...props} />} 
-                        /> */}
-                            
-                            {/* <Route path={match.path}>
-                            <h3>Please select a topic.</h3>
-                            </Route> */}
-                        
                             {main_news}
                     </div>
                     <div className="news-latest-container">
                     <div className="news-latest-item">
                             <p>LATEST</p>
-
                             <img src={IMGBorder2} alt='border' />
                                 <div className="new-lastest-content"  onClick={()=>history.push(`${url}/${lastest_news.id}`)}>
                                     <img src={NewsIMG2} alt="img"/>
@@ -128,11 +110,6 @@ const Newspage =(props)=>{
                                     </div>
                                 </div>
                             </div>
-                        {/* <img src={IMGBorder2} alt='border' /> */}
-                        
-                        {/* <div className="container"> */}
-                            
-                        {/* </div> */}
                     </div>
                     <div className="news-recommended-container">
                         <p>reccommended</p>
@@ -155,10 +132,7 @@ const Newspage =(props)=>{
                                         />
                                        ) 
                                     }
-                                    
-                                    
                                 })
-                                    
                                 }
                         </div>
                         <div className="list-news-reccommended">
@@ -180,79 +154,9 @@ const Newspage =(props)=>{
                                         />
                                        ) 
                                     }
-                                    
-                                    
                                 })
-                                    
                                 }
                         </div>
-
-                                {/* <Carditem 
-                                    img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                /> */}
-                                {/* <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    />
-                                    
-                                <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    />
-                                    </div>
-                                    <div className="list-news-reccommended">
-                                <Carditem 
-                                    img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                />
-                                
-                                <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    />
-                                <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    /> */}
                     </div>
                 </div>
             
