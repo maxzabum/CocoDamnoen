@@ -4,10 +4,9 @@ import "./cardStyles.css"
 const Carditem = ({img,textHeader,width,height,borderW,borderH,fontSize,top,textDesc,imgBorder,onClick,...props}) =>{
     return(
         <div className="card-container" onClick={onClick}>
-            <img src={imgBorder ? imgBorder : BorderIngre} 
-            style={{width:borderW,height:borderH}} 
-            className="img-content" 
-            alt={'img'}
+            <img src={imgBorder ? imgBorder : BorderIngre} style={{width:borderW,height:borderH}} 
+                 className="img-content" 
+                 alt="img"
             />
             <div className="card-content" style={{top:top}}>
                 <img src={img} alt="img-ingre" style={{width:width,height:height}} />

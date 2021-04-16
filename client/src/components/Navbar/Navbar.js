@@ -24,6 +24,9 @@ const Navbar = ({isActive, onClick,active,setActive , screenWidth,...props}) => 
                                 <li className="product-button m-r-10" onClick={() => history.push('/store')}>
                                     <a>STORE</a>
                                 </li>
+                                <li className="product-button m-r-10" onClick={() => history.push('/store')}>
+                                    <img src={ThaiSVG} alt="sw-lang"/>
+                                </li>
                             </ul>
                         </div> : <div>
                             <div className={'nav-mobile-container'}>

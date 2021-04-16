@@ -12,7 +12,8 @@ import IMGBorder2 from '../../images/BGCard2.png'
 import NewsIMG2 from '../../images/antonio-scant-z2NDh7a2QZE-unsplash.jpg'
 import NewsIMG1 from '../../images/nipanan-lifestyle-pV2xU2rP580-unsplash.jpg'
 import DetailNew from './DetailNewsPage/Detailnews'
-const Newspage =(props)=>{
+import NewsheaderMobile from '../../images/news_page_01_mobile.png'
+const Newspage =({screenWidth,...props})=>{
     const { url } = useRouteMatch();
     const history = useHistory()
    const news = [
@@ -67,19 +68,73 @@ const Newspage =(props)=>{
                     key={newse.id}
                     img={newse.img} 
                     textHeader={newse.header}
-                    textDesc={newse.desc}
+                    textDesc={screenWidth > 1024 && newse.desc}
                     width={"90%"} 
-                    height={150}
-                    borderH={"100%"} 
-                    borderW={300}
-                    fontSize={{textHeader : 22,textDesc:14}}
-                    top={"45%"}
+                                            height={"clamp(100px, 15vh, 160px)"}
+                                            borderH={"100%"} 
+                                            borderW={"100%"}
+                    fontSize={{textHeader : "clamp(12px, 2vw, 24px)",textDesc:"clamp(10px, 4vw, 14px)"}}
+                    top={"50%"}
                     onClick={()=>history.push(`${url}/${newse.id}`)}
                 />
             );
         }
         return null
    });
+   const main_news_mobile = news.map((newse) => {
+    if(newse.id <=2){
+        return (
+            <Carditem 
+                key={newse.id}
+                img={newse.img} 
+                textHeader={newse.header}
+                width={"90%"} 
+                                        height={"clamp(80px, 50%, 160px)"}
+                                        borderH={"100%"} 
+                                        borderW={"100%"}
+                fontSize={{textHeader : "clamp(12px, 2vw, 24px)"}}
+                top={"50%"}
+                onClick={()=>history.push(`${url}/${newse.id}`)}
+            />
+        
+        );
+    }
+    return null
+});
+const reccommend_news = news.map((newse) => {
+            return <Carditem 
+            key={newse.id}
+            img={newse.img} 
+            textHeader={newse.header}
+            width={"90%"} 
+                                    height={"160px"}
+                                    borderH={"100%"} 
+                                    borderW={"100%"}
+            fontSize={{textHeader : "clamp(12px, 2vw, 24px)"}}
+            top={"50%"}
+            onClick={()=>history.push(`${url}/${newse.id}`)}
+        />
+});
+const reccommend_news_mobile = news.map((newse) => {
+    if(newse.id <=4){
+        return (
+            <Carditem 
+                key={newse.id}
+                img={newse.img} 
+                textHeader={newse.header}
+                width={"90%"} 
+                                        height={"clamp(80px, 50%, 160px)"}
+                                        borderH={"100%"} 
+                                        borderW={"100%"}
+                fontSize={{textHeader : "clamp(12px, 2vw, 24px)"}}
+                top={"50%"}
+                onClick={()=>history.push(`${url}/${newse.id}`)}
+            />
+        
+        );
+    }
+    return null
+});
     return(
         <Switch >
             <Route exact path={`${url}/:topicId`}>
@@ -88,14 +143,16 @@ const Newspage =(props)=>{
             <Route exact path={url}>
                 <div className="main-newspage-container">
                 <div className="news-header">
-                <img src={Landingheader} alt="img"/>
+                {screenWidth > 1024 ? <img src={Landingheader} alt="img"/> : <img src={NewsheaderMobile} alt="img"/>}
                     <div className="text-header">
                         <p>NEWS</p>
                     </div>
                 </div>
                 <div className="news-container">
                     <div className="news-main-container">
-                            {main_news}
+                            {screenWidth > 1024 ?
+                                main_news:main_news_mobile
+                            }
                     </div>
                     <div className="news-latest-container">
                     <div className="news-latest-item">
@@ -105,9 +162,9 @@ const Newspage =(props)=>{
                                     <img src={NewsIMG2} alt="img"/>
                                     <div className="description">
                                         <p className="text-header">{lastest_news.header}</p>
-                                        <p className="text-desc">
+                                        {screenWidth>1024 && <p className="text-desc">
                                             {lastest_news.desc}
-                                        </p>
+                                        </p>}
                                     </div>
                                 </div>
                             </div>
@@ -115,29 +172,9 @@ const Newspage =(props)=>{
                     <div className="news-recommended-container">
                         <p>reccommended</p>
                         <div className="list-news-reccommended">
-                                {news.map((news)=>{
-                                    if(news.id<=3){
-                                       return( 
-                                        <Carditem 
-                                        key={news.id}
-                                            img={NewsIMG1} 
-                                            textHeader={news.header}
-                                            textDesc={news.desc}
-                                            width={"90%"} 
-                                            height={150}
-                                            borderH={"100%"} 
-                                            borderW={300}
-                                            fontSize={{textHeader : 22,textDesc:14}}
-                                            top={"45%"}
-                                            onClick={()=>history.push(`${url}/${news.id}`)}
-                                        />
-                                       ) 
-                                    }
-                                    return null
-                                })
-                                }
+                                {screenWidth > 1024 ? reccommend_news : reccommend_news_mobile}
                         </div>
-                        <div className="list-news-reccommended">
+                        {/* <div className="list-news-reccommended">
                                 {news.map((news)=>{
                                     if(news.id>3){
                                        return( 
@@ -159,7 +196,74 @@ const Newspage =(props)=>{
                                     return null
                                 })
                                 }
-                        </div>
+                        </div> */}
+
+                                {/* <Carditem 
+                                    img={NewsIMG1} 
+                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
+                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
+                                    width={"90%"} 
+                                    height={150}
+                                    borderH={"100%"} 
+                                    borderW={300}
+                                    fontSize={{textHeader : 22,textDesc:14}}
+                                    top={"45%"}
+                                /> */}
+                                {/* <Carditem img={NewsIMG1} 
+                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
+                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
+                                    width={"90%"} 
+                                    height={150}
+                                    borderH={"100%"} 
+                                    borderW={300}
+                                    fontSize={{textHeader : 22,textDesc:14}}
+                                    top={"45%"}
+                                    />
+                                    
+                                <Carditem img={NewsIMG1} 
+                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
+                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
+                                    width={"90%"} 
+                                    height={150}
+                                    borderH={"100%"} 
+                                    borderW={300}
+                                    fontSize={{textHeader : 22,textDesc:14}}
+                                    top={"45%"}
+                                    />
+                                    </div>
+                                    <div className="list-news-reccommended">
+                                <Carditem 
+                                    img={NewsIMG1} 
+                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
+                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
+                                    width={"90%"} 
+                                    height={150}
+                                    borderH={"100%"} 
+                                    borderW={300}
+                                    fontSize={{textHeader : 22,textDesc:14}}
+                                    top={"45%"}
+                                />
+                                
+                                <Carditem img={NewsIMG1} 
+                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
+                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
+                                    width={"90%"} 
+                                    height={150}
+                                    borderH={"100%"} 
+                                    borderW={300}
+                                    fontSize={{textHeader : 22,textDesc:14}}
+                                    top={"45%"}
+                                    />
+                                <Carditem img={NewsIMG1} 
+                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
+                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
+                                    width={"90%"} 
+                                    height={150}
+                                    borderH={"100%"} 
+                                    borderW={300}
+                                    fontSize={{textHeader : 22,textDesc:14}}
+                                    top={"45%"}
+                                    /> */}
                     </div>
                 </div>
             

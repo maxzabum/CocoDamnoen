@@ -48,12 +48,15 @@ const App = (props) => {
                     <Route
                         // exact
                         path="/news"
-                        component={Newspage}
-                    />
+                    >
+                        <Newspage screenWidth={width}/>
+                    </Route>
                     <Route
                         path="/store"
-                        component={Storepage}
-                    />
+                        
+                    >
+                        <Storepage screenWidth={width}/>
+                    </Route>
 
                     <Route
                         component={DetailNew}

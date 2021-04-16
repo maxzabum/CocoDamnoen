@@ -44,7 +44,7 @@ const Homepage = ({screenWidth, ...props}) => {
                     <div className='text-right'>
                         <div>
                             <div className='circle-container'>
-                                <img src={BicepsPNG}
+                                <img src={BicepsPNG }
                                      style={screenWidth > 768 ? {width: 64, height: 60} : {width: 44, height: 40}}
                                      alt="img"/>
                             </div>
@@ -199,15 +199,15 @@ const Homepage = ({screenWidth, ...props}) => {
                         </div>
                         <div className="box-content">
                             <div className="box-container-mobile">
-                                <img src={BoxContentMobile} alt={'img'}/>
+                                <img src={BoxContentMobile} alt="img"/>
                                 <p>SLOWING DOWN OF ALZHEIMERS</p>
                             </div>
                             <div className="box-container-mobile">
-                                <img src={BoxContentMobile} alt={'img'}/>
+                                <img src={BoxContentMobile} alt="img"/>
                                 <p>GIVING YOUTHFUL AND GLOWING SKIN</p>
                             </div>
                             <div className="box-container-mobile">
-                                <img src={BoxContentMobile} alt={'img'}/>
+                                <img src={BoxContentMobile} alt="img"/>
                                 <p>THE BEST REFRESHMENT DRINK AND SPORT DRINK</p>
                             </div>
                         </div>
@@ -217,10 +217,10 @@ const Homepage = ({screenWidth, ...props}) => {
             <div className="item-container landing-pictures">
                 <p>COCO DAMNOEN</p>
                 <div className="imgs-container">
-                    <img src={IMGPreview1} alt={'img'}/>
-                    <img src={IMGPreview2} alt={'img'}/>
-                    <img src={IMGPreview3} alt={'img'}/>
-                    <img src={IMGPreview4} alt={'img'}/>
+                    <img src={IMGPreview1} alt="img"/>
+                    <img src={IMGPreview2} alt="img"/>
+                    <img src={IMGPreview3} alt="img"/>
+                    <img src={IMGPreview4} alt="img"/>
                 </div>
             </div>
         </div>

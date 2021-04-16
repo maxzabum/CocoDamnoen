@@ -17,8 +17,8 @@
 .landing-header .text-header {
   color: #4e4e4e;
   position: absolute;
-  font-size: clamp(90px, 10vw, 180px);
-  top: 50%;
+  font-size: clamp(58px, 10vw, 180px);
+  top: 42%;
   left: 50%;
   display: flex;
   transform: translate(-50%, -50%);

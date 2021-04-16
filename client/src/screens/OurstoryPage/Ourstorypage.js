@@ -3,12 +3,17 @@ import OurStoryHeader from './our_story_landingpage-05.png'
 import OurStoryIMG1 from './our_story_content1-07.png'
 import OurStoryIMG2 from './our_story_content2-08.png'
 import OurStoryIMG3 from './our_story_content3-09.png'
+import OurStoryHeaderMobile from '../../images/ourstory_page_01_mobile.png'
 import "./styles.css"
 const Ourstorypage =({screenWidth,...props})=>{
     return(
         <div className="main-ourstorypage-container">
             <div className="item-container ourstory-header">
-                <img src={OurStoryHeader} alt="img"/>
+                {screenWidth > 600 ?
+                    <img src={OurStoryHeader} alt="img"/>
+                    :
+                    <img src={OurStoryHeaderMobile} alt="img"/>
+                }
                 <div className="text-header">
                     <p>OUR</p>
                     <p>STORY</p>
