@@ -155,8 +155,8 @@
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.5;
-  background-image: url(../../images/bg_product-01.png);
+  opacity: 0.2;
+  background-image: url(../../images/product-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

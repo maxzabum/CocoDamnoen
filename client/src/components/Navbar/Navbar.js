@@ -1,6 +1,6 @@
 import React from 'react'
 import DehazeRoundedIcon from '@material-ui/icons/DehazeRounded';
-import Logo from './Logo.png'
+import Logo from '../../images/logo.png'
 import ThaiSVG from './thailand.svg'
 import './navbar.css'
 import {useHistory} from 'react-router-dom'
@@ -15,7 +15,7 @@ const Navbar = ({isActive, onClick,active,setActive , screenWidth,...props}) => 
                         <div className={'nav-container'}>
                             <img src={Logo} className="logo" onClick={() => history.push('/')} alt="img"/>
                             <ul className="nav-right-items">
-                                <li className="product-button m-r-10" href={() => history.push('/ourstory')}>
+                                <li className="product-button m-r-10" onClick={() => history.push('/ourstory')}>
                                     <a>OURSTORY</a>
                                 </li>
                                 <li className="product-button m-r-10" onClick={() => history.push('/news')}>

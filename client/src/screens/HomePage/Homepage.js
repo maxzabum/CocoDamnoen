@@ -1,20 +1,20 @@
 import React from 'react'
 import Carditem from '../../components/CardItem/Carditem'
 import "./styles.css"
-import LandingheaderMobile from '../../images/landing_page_01_mobile.png'
-import Landingheader from '../../images/landing_page-01.png'
+import LandingheaderMobile from '../../images/landing_page_mobile.jpg'
+import Landingheader from '../../images/landing_page_01.jpg'
 import BicepsPNG from '../../images/biceps.png'
 import BagSVG from '../../images/bag.svg'
 import CoconutPNG from '../../images/coconut.png'
-import LandingOurstory from '../../images/our_story-03.png'
-import ProductIMG from '../../images/Product-2.png'
-import IngreIMG from '../../images/vera-gorbunova.png'
+import LandingOurstory from '../../images/ourstory-content.jpg'
+import ProductIMG from '../../images/product-01.png'
+import IngreIMG from '../../images/img-preview-04.jpg'
 import BoxContent from '../../images/aromatic_content-10.png'
-import CocoBG2 from '../../images/aromatic-02.png'
-import IMGPreview1 from '../../images/black-coco-coco-nut-60713.png'
-import IMGPreview2 from '../../images/IMG_8606.png'
-import IMGPreview3 from '../../images/jonas-ducker.png'
-import IMGPreview4 from '../../images/vera-gorbunova.png'
+import CocoBG2 from '../../images/aromatic-02.jpg'
+import IMGPreview1 from '../../images/img-preview-01.jpg'
+import IMGPreview2 from '../../images/img-preview-02.jpg'
+import IMGPreview3 from '../../images/img-preview-03.jpg'
+import IMGPreview4 from '../../images/img-preview-04.jpg'
 import {useHistory} from 'react-router-dom'
 import BoxContentMobile from '../../images/border-properties-mobile.png'
 const Homepage = ({screenWidth, ...props}) => {
@@ -22,7 +22,7 @@ const Homepage = ({screenWidth, ...props}) => {
     return (
         <div className="main-homepage-container">
             <div className="item-container landing-header">
-                {screenWidth > 768 ?
+                {screenWidth > 600 ?
                     <img src={Landingheader} alt="img"/>
                     :
                     <img src={LandingheaderMobile} alt="img"/>}
