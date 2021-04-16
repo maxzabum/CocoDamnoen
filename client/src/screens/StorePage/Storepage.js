@@ -1,6 +1,6 @@
 import React from 'react'
 import "./styles.css"
-import Landingheader from '../../images/landing_page-01.png'
+import Landingheader from '../../images/store_page_01.png'
 import Carditem from '../../components/CardItem/Carditem'
 import IMGBorder2 from '../../images/BGCard2.png'
 import NewsIMG2 from '../../images/antonio-scant-z2NDh7a2QZE-unsplash.jpg'
