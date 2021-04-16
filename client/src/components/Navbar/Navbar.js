@@ -1,7 +1,7 @@
 import React from 'react'
 import DehazeRoundedIcon from '@material-ui/icons/DehazeRounded';
 import Logo from './Logo.png'
-// import ThaiSVG from './thailand.svg'
+import ThaiSVG from './thailand.svg'
 import './navbar.css'
 import {useHistory} from 'react-router-dom'
 import { SwitchTransition, CSSTransition } from "react-transition-group";
