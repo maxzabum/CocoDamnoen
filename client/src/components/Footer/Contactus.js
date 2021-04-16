@@ -1,11 +1,9 @@
-import { Grid } from '@material-ui/core'
 import React from 'react'
 import "./contactStyles.css"
 import FBIcon from './fb.png'
 import IGIcon from './instragram.png'
 import LineIcon from './line.png'
 import TwiiterIcon from './twitter.png'
-import BGContact from './contact-22.png'
 const Contactus =()=>{
     return(
         <div className="contactus-container">
@@ -26,10 +24,10 @@ const Contactus =()=>{
                             <button>SUBSCRIBE</button>
                         </div>
                         <div className="follow-buttons-container">
-                            <img src={FBIcon}/>
-                            <img src={IGIcon}/>
-                            <img src={LineIcon}/>
-                            <img src={TwiiterIcon}/>
+                            <img src={FBIcon} alt="img"/>
+                            <img src={IGIcon} alt="img"/>
+                            <img src={LineIcon} alt="img"/>
+                            <img src={TwiiterIcon} alt="img"/>
                         </div>
                     </div>
                 </div>

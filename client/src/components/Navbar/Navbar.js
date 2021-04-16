@@ -8,30 +8,6 @@ import { SwitchTransition, CSSTransition } from "react-transition-group";
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 const Navbar = ({isActive, onClick,active,setActive , screenWidth,...props}) => {
     const history = useHistory()
-    // const [width, setWindowWidth] = useState(0)
-    // const [active, setActive] = useState( closeNav === null ? false : true)
-    const [fade , setFade] = useState(true)
-    const [fade_close , setFade_close] = useState('')
-    // useEffect(() => {
-    //
-    //     updateDimensions();
-    //     // console.log(width)
-    //     window.addEventListener('resize', updateDimensions);
-    //     return () =>
-    //         window.removeEventListener('resize', updateDimensions);
-    //
-    // }, [])
-    // useEffect(()=>{
-    //
-    //
-    //     return () =>
-    //
-    //
-    // },[])
-    // const updateDimensions = () => {
-    //     const width = window.innerWidth
-    //     setWindowWidth(width)
-    // }
     return (
         <div>
                 <div className={'nav-container'}>
@@ -47,6 +23,9 @@ const Navbar = ({isActive, onClick,active,setActive , screenWidth,...props}) => 
                                 </li>
                                 <li className="product-button m-r-10" onClick={() => history.push('/store')}>
                                     <a>STORE</a>
+                                </li>
+                                <li className="product-button m-r-10" onClick={() => history.push('/store')}>
+                                    <img src={ThaiSVG} alt="sw-lang"/>
                                 </li>
                             </ul>
                         </div> : <div>

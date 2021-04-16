@@ -1,4 +1,3 @@
-import {Box, Container, Grid} from '@material-ui/core'
 import React from 'react'
 import Carditem from '../../components/CardItem/Carditem'
 import "./styles.css"
@@ -45,7 +44,7 @@ const Homepage = ({screenWidth, ...props}) => {
                     <div className='text-right'>
                         <div>
                             <div className='circle-container'>
-                                <img src={BicepsPNG}
+                                <img src={BicepsPNG }
                                      style={screenWidth > 768 ? {width: 64, height: 60} : {width: 44, height: 40}}
                                      alt="img"/>
                             </div>
@@ -75,10 +74,10 @@ const Homepage = ({screenWidth, ...props}) => {
                 </div>
                 <div className='bottom-grid'>
 
-                    <div item xs={12} sm={6} className='text-left'>
+                    <div xs={12} sm={6} className='text-left'>
                         <img src={LandingOurstory} className='image-ourstory' alt="img"/>
                     </div>
-                    <div item xs={12} sm={6} className='text-right'>
+                    <div xs={12} sm={6} className='text-right'>
                         <p>OUR STORY</p>
                         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quality Aromatic coconuts come from a
                             special soil in
@@ -164,20 +163,20 @@ const Homepage = ({screenWidth, ...props}) => {
                             </div>
                         </div>
                         <div className="right-container">
-                            <img src={CocoBG2}/>
+                            <img src={CocoBG2} alt="img"/>
                         </div>
                     </div>
                     <div className="box-content">
                         <div className="box-container">
-                            <img src={BoxContent}/>
+                            <img src={BoxContent} alt="img"/>
                             <p>SLOWING DOWN OF ALZHEIMERS</p>
                         </div>
                         <div className="box-container">
-                            <img src={BoxContent}/>
+                            <img src={BoxContent} alt="img"/>
                             <p>GIVING YOUTHFUL AND GLOWING SKIN</p>
                         </div>
                         <div className="box-container">
-                            <img src={BoxContent}/>
+                            <img src={BoxContent} alt="img"/>
                             <p>THE BEST REFRESHMENT DRINK AND SPORT DRINK</p>
                         </div>
                     </div>
@@ -185,7 +184,7 @@ const Homepage = ({screenWidth, ...props}) => {
                 :
                 <div className="item-container landing-properties">
                     <div className="right-container">
-                        <img src={CocoBG2}/>
+                        <img src={CocoBG2} alt="img"/>
                     </div>
                     <div className="left-container">
                         <div className="text-container">
@@ -200,15 +199,15 @@ const Homepage = ({screenWidth, ...props}) => {
                         </div>
                         <div className="box-content">
                             <div className="box-container-mobile">
-                                <img src={BoxContentMobile}/>
+                                <img src={BoxContentMobile} alt="img"/>
                                 <p>SLOWING DOWN OF ALZHEIMERS</p>
                             </div>
                             <div className="box-container-mobile">
-                                <img src={BoxContentMobile}/>
+                                <img src={BoxContentMobile} alt="img"/>
                                 <p>GIVING YOUTHFUL AND GLOWING SKIN</p>
                             </div>
                             <div className="box-container-mobile">
-                                <img src={BoxContentMobile}/>
+                                <img src={BoxContentMobile} alt="img"/>
                                 <p>THE BEST REFRESHMENT DRINK AND SPORT DRINK</p>
                             </div>
                         </div>
@@ -220,10 +219,10 @@ const Homepage = ({screenWidth, ...props}) => {
             <div className="item-container landing-pictures">
                 <p>COCO DAMNOEN</p>
                 <div className="imgs-container">
-                    <img src={IMGPreview1}/>
-                    <img src={IMGPreview2}/>
-                    <img src={IMGPreview3}/>
-                    <img src={IMGPreview4}/>
+                    <img src={IMGPreview1} alt="img"/>
+                    <img src={IMGPreview2} alt="img"/>
+                    <img src={IMGPreview3} alt="img"/>
+                    <img src={IMGPreview4} alt="img"/>
                 </div>
             </div>
         </div>

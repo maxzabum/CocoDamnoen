@@ -130,6 +130,8 @@
   .content-text-container
   :nth-child(3) {
   font-size: clamp(16px, 3vw, 25px);
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
   color: #6e6d6d;
   width: 90%;
 }
