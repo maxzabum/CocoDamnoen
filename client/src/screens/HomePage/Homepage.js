@@ -1,20 +1,20 @@
 import React from 'react'
 import Carditem from '../../components/CardItem/Carditem'
 import "./styles.css"
-import LandingheaderMobile from '../../images/landing_page_01_mobile.png'
-import Landingheader from '../../images/landing_page-01.png'
+import LandingheaderMobile from '../../images/landing_page_mobile.jpg'
+import Landingheader from '../../images/landing_page_01.jpg'
 import BicepsPNG from '../../images/biceps.png'
 import BagSVG from '../../images/bag.svg'
 import CoconutPNG from '../../images/coconut.png'
-import LandingOurstory from '../../images/our_story-03.png'
-import ProductIMG from '../../images/Product-2.png'
-import IngreIMG from '../../images/vera-gorbunova.png'
+import LandingOurstory from '../../images/ourstory-content.jpg'
+import ProductIMG from '../../images/product-01.png'
+import IngreIMG from '../../images/img-preview-04.jpg'
 import BoxContent from '../../images/aromatic_content-10.png'
-import CocoBG2 from '../../images/aromatic-02.png'
-import IMGPreview1 from '../../images/black-coco-coco-nut-60713.png'
-import IMGPreview2 from '../../images/IMG_8606.png'
-import IMGPreview3 from '../../images/jonas-ducker.png'
-import IMGPreview4 from '../../images/vera-gorbunova.png'
+import CocoBG2 from '../../images/aromatic-02.jpg'
+import IMGPreview1 from '../../images/img-preview-01.jpg'
+import IMGPreview2 from '../../images/img-preview-02.jpg'
+import IMGPreview3 from '../../images/img-preview-03.jpg'
+import IMGPreview4 from '../../images/img-preview-04.jpg'
 import {useHistory} from 'react-router-dom'
 import BoxContentMobile from '../../images/border-properties-mobile.png'
 const Homepage = ({screenWidth, ...props}) => {
@@ -22,7 +22,7 @@ const Homepage = ({screenWidth, ...props}) => {
     return (
         <div className="main-homepage-container">
             <div className="item-container landing-header">
-                {screenWidth > 768 ?
+                {screenWidth > 600 ?
                     <img src={Landingheader} alt="img"/>
                     :
                     <img src={LandingheaderMobile} alt="img"/>}
@@ -74,10 +74,10 @@ const Homepage = ({screenWidth, ...props}) => {
                 </div>
                 <div className='bottom-grid'>
 
-                    <div xs={12} sm={6} className='text-left'>
+                    <div className='text-left'>
                         <img src={LandingOurstory} className='image-ourstory' alt="img"/>
                     </div>
-                    <div xs={12} sm={6} className='text-right'>
+                    <div className='text-right'>
                         <p>OUR STORY</p>
                         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quality Aromatic coconuts come from a
                             special soil in
@@ -163,20 +163,20 @@ const Homepage = ({screenWidth, ...props}) => {
                             </div>
                         </div>
                         <div className="right-container">
-                            <img src={CocoBG2} alt="img"/>
+                            <img src={CocoBG2} alt={'bg-img'}/>
                         </div>
                     </div>
                     <div className="box-content">
                         <div className="box-container">
-                            <img src={BoxContent} alt="img"/>
+                            <img src={BoxContent} alt={'img'}/>
                             <p>SLOWING DOWN OF ALZHEIMERS</p>
                         </div>
                         <div className="box-container">
-                            <img src={BoxContent} alt="img"/>
+                            <img src={BoxContent} alt={'img'}/>
                             <p>GIVING YOUTHFUL AND GLOWING SKIN</p>
                         </div>
                         <div className="box-container">
-                            <img src={BoxContent} alt="img"/>
+                            <img src={BoxContent} alt={'img'}/>
                             <p>THE BEST REFRESHMENT DRINK AND SPORT DRINK</p>
                         </div>
                     </div>
@@ -184,7 +184,7 @@ const Homepage = ({screenWidth, ...props}) => {
                 :
                 <div className="item-container landing-properties">
                     <div className="right-container">
-                        <img src={CocoBG2} alt="img"/>
+                        <img src={CocoBG2} alt={'img'}/>
                     </div>
                     <div className="left-container">
                         <div className="text-container">
@@ -212,10 +212,8 @@ const Homepage = ({screenWidth, ...props}) => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             }
-
             <div className="item-container landing-pictures">
                 <p>COCO DAMNOEN</p>
                 <div className="imgs-container">

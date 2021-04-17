@@ -20,12 +20,12 @@
 }
 .detailnew-header > :first-child {
   color: #4e4e4e;
-  font-size: 60px;
+  font-size: clamp(20px, 5vw, 60px);
   padding-bottom: 40px;
   border-bottom: 5px solid #707070;
 }
 .date-post {
-  font-size: 18;
+  font-size: clamp(12px, 3vw, 18px);
   color: #a99371;
   margin: 20px 0;
 }
@@ -35,7 +35,7 @@
   justify-content: center;
 }
 .detail-news {
-  font-size: 25px;
+  font-size: clamp(14px, 3vw, 25px);
   color: #4e4e4e;
   white-space: pre-wrap;
   line-height: 2rem;
@@ -46,4 +46,14 @@
 }
 .img-news {
   align-self: center;
+  width: min(100%, 600px);
+}
+@media (max-width: 600px) {
+  .new-content-container div {
+    margin: 20px 0;
+  }
+  .detail-news {
+    line-height: 1.5rem;
+    letter-spacing: 0.025rem;
+  }
 }

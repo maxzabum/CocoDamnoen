@@ -1,9 +1,9 @@
 import React from 'react'
-import OurStoryHeader from './our_story_landingpage-05.png'
-import OurStoryIMG1 from './our_story_content1-07.png'
-import OurStoryIMG2 from './our_story_content2-08.png'
-import OurStoryIMG3 from './our_story_content3-09.png'
-import OurStoryHeaderMobile from '../../images/ourstory_page_01_mobile.png'
+import OurStoryHeader from '../../images/ourstory_page_01.jpg'
+import OurStoryIMG1 from '../../images/ourstory-content-01.png'
+import OurStoryIMG2 from '../../images/ourstory-content-02.png'
+import OurStoryIMG3 from '../../images/ourstory-content-03.png'
+import OurStoryHeaderMobile from '../../images/ourstory_page_mobile.jpg'
 import "./styles.css"
 const Ourstorypage =({screenWidth,...props})=>{
     return(

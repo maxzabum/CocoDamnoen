@@ -6,13 +6,13 @@ import {
     useRouteMatch,
     useHistory
   } from "react-router-dom";
-import Landingheader from '../../images/landing_page-01.png'
+import Landingheader from '../../images/new_page_01.jpg'
 import Carditem from '../../components/CardItem/Carditem'
 import IMGBorder2 from '../../images/BGCard2.png'
-import NewsIMG2 from '../../images/antonio-scant-z2NDh7a2QZE-unsplash.jpg'
-import NewsIMG1 from '../../images/nipanan-lifestyle-pV2xU2rP580-unsplash.jpg'
+import NewsIMG2 from '../../images/new_preview_01.jpg'
+import NewsIMG1 from '../../images/img-preview-04.jpg'
 import DetailNew from './DetailNewsPage/Detailnews'
-import NewsheaderMobile from '../../images/news_page_01_mobile.png'
+import NewsheaderMobile from '../../images/new_page_01_mobile.jpg'
 const Newspage =({screenWidth,...props})=>{
     const { url } = useRouteMatch();
     const history = useHistory()
@@ -77,9 +77,6 @@ const Newspage =({screenWidth,...props})=>{
                     top={"50%"}
                     onClick={()=>history.push(`${url}/${newse.id}`)}
                 />
-            //   <li key={newse.id}>
-            //     <Link to={`${url}/${newse.id}`}>{newse.header}</Link>
-            //   </li>
             );
         }
         return null
@@ -160,7 +157,6 @@ const reccommend_news_mobile = news.map((newse) => {
                     <div className="news-latest-container">
                     <div className="news-latest-item">
                             <p>LATEST</p>
-
                             <img src={IMGBorder2} alt='border' />
                                 <div className="new-lastest-content"  onClick={()=>history.push(`${url}/${lastest_news.id}`)}>
                                     <img src={NewsIMG2} alt="img"/>
@@ -172,108 +168,12 @@ const reccommend_news_mobile = news.map((newse) => {
                                     </div>
                                 </div>
                             </div>
-                        {/* <img src={IMGBorder2} alt='border' /> */}
-                        
-                        {/* <div className="container"> */}
-                            
-                        {/* </div> */}
                     </div>
                     <div className="news-recommended-container">
                         <p>reccommended</p>
                         <div className="list-news-reccommended">
                                 {screenWidth > 1024 ? reccommend_news : reccommend_news_mobile}
                         </div>
-                        {/* <div className="list-news-reccommended">
-                                {news.map((news)=>{
-                                    if(news.id>3){
-                                       return( 
-                                        <Carditem 
-                                        key={news.id}
-                                            img={NewsIMG1} 
-                                            textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                            textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                            width={"90%"} 
-                                            height={150}
-                                            borderH={"100%"} 
-                                            borderW={300}
-                                            fontSize={{textHeader : 22,textDesc:14}}
-                                            top={"45%"}
-                                            onClick={()=>history.push(`${url}/${news.id}`)}
-                                        />
-                                       ) 
-                                    }
-                                    return null
-                                })
-                                    
-                                }
-                        </div> */}
-
-                                {/* <Carditem 
-                                    img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                /> */}
-                                {/* <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    />
-                                    
-                                <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    />
-                                    </div>
-                                    <div className="list-news-reccommended">
-                                <Carditem 
-                                    img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                />
-                                
-                                <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    />
-                                <Carditem img={NewsIMG1} 
-                                    textHeader={"Benefits Coconut water for health What is the best woman to drink? "}
-                                    textDesc={"Girls, have you heard that coconut water” helps women look radiant."}
-                                    width={"90%"} 
-                                    height={150}
-                                    borderH={"100%"} 
-                                    borderW={300}
-                                    fontSize={{textHeader : 22,textDesc:14}}
-                                    top={"45%"}
-                                    /> */}
                     </div>
                 </div>
             

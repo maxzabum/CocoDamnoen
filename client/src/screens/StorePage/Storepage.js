@@ -1,11 +1,11 @@
 import React from 'react'
 import "./styles.css"
-import Landingheader from '../../images/store_page_01.png'
+import Landingheader from '../../images/store_page_01.jpg'
 import Carditem from '../../components/CardItem/Carditem'
 import IMGBorder2 from '../../images/BGCard2.png'
-import NewsIMG2 from '../../images/antonio-scant-z2NDh7a2QZE-unsplash.jpg'
-import NewsIMG1 from '../../images/nipanan-lifestyle-pV2xU2rP580-unsplash.jpg'
-import LandingheaderMobile from '../../images/store_page_mobile_01.png'
+import NewsIMG2 from '../../images/new_preview_01.jpg'
+import NewsIMG1 from '../../images/img-preview-04.jpg'
+import LandingheaderMobile from '../../images/store_page_01_mobile.jpg'
 const Storepage =({screenWidth,...props})=>{
     const news = [
         {

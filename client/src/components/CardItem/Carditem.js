@@ -9,7 +9,7 @@ const Carditem = ({img,textHeader,width,height,borderW,borderH,fontSize,top,text
                  alt="img"
             />
             <div className="card-content" style={{top:top}}>
-                <img src={img} alt="img-ingre" style={{width:width,height:height}}/>
+                <img src={img} alt="img-ingre" style={{width:width,height:height}} />
                 {textHeader && <p style={{fontSize:fontSize.textHeader}}>{textHeader}</p>}
                 {textDesc && <p style={{fontSize:fontSize.textDesc}}>{textDesc}</p>} 
             </div>

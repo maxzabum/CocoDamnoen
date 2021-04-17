@@ -41,7 +41,6 @@ const App = (props) => {
                     </Route>
                     <Route
                         path="/ourstory"
-                        
                     >
                         <Ourstorypage screenWidth={width}/>
                     </Route>
