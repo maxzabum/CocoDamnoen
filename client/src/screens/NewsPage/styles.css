@@ -5,7 +5,7 @@
 }
 .main-newspage-container .news-header {
   position: relative;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 .news-header img {
@@ -151,6 +151,9 @@
 } */
 
 @media (max-width: 1024px) {
+  .main-newspage-container .news-header {
+    height: 100%;
+  }
   .news-latest-container .news-latest-item {
     margin-top: 150px;
   }
