@@ -26,7 +26,9 @@ const DetailNew = ({ news }) => {
           {news_data.header}
           {/* Benefits Coconut water for health What is the best woman to drink? */}
         </p>
-        <p className="date-post">18 july 1990 , admin : dui</p>
+        <p className="date-post">
+          {news_data.date} , {news_data.writer}
+        </p>
       </div>
       <div className="new-content-container">
         <img className="img-news" src={news_data.img} alt="img" />

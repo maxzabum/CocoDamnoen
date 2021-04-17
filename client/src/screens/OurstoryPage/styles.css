@@ -149,8 +149,14 @@
 }
 
 @media (max-width: 600px) {
+  .main-ourstorypage-container .ourstory-header {
+    height: 100% !important;
+  }
 }
 @media (max-width: 1024px) {
+  .main-ourstorypage-container .ourstory-header {
+    height: 55vh;
+  }
   .main-ourstorypage-container .ourstory-1 > p {
     width: 80%;
   }

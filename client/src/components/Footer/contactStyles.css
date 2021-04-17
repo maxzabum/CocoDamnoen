@@ -20,7 +20,7 @@
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
-.contactus-container .item-contactus .contact-detail div{
+.contactus-container .item-contactus .contact-detail div {
   margin: 0px 40px;
 }
 .contactus-container .item-contactus .left-container {
@@ -29,7 +29,7 @@
   justify-content: center; */
   text-align: center;
   /*margin-right: 100px;*/
-  margin-bottom: 20px!important;
+  margin-bottom: 20px !important;
 
   color: #fff;
 }
@@ -38,9 +38,9 @@
   margin-bottom: 20px;
 }
 .contactus-container .item-contactus .left-container :nth-child(n + 2) {
-  font-size: clamp(14px, 3vw, 18px);
+  font-size: clamp(16px, 3vw, 24px);
   letter-spacing: 0.05rem;
-  line-height: 1.8rem;
+  line-height: 2.5rem;
 }
 .contactus-container .item-contactus .right-container {
   display: flex;
@@ -49,11 +49,15 @@
   text-align: center;
   color: #fff;
 }
-.contactus-container .item-contactus .right-container .email-subscribe-container > p {
+.contactus-container
+  .item-contactus
+  .right-container
+  .email-subscribe-container
+  > p {
   font-size: clamp(25px, 3vw, 50px);
 }
-.contactus-container .item-contactus .email-subscribe-container{
-  margin: 20px 0!important;
+.contactus-container .item-contactus .email-subscribe-container {
+  margin: 20px 0 !important;
 }
 .contactus-container .item-contactus .right-container input {
   background: transparent;
@@ -103,7 +107,7 @@
   .item-contactus
   .right-container
   .follow-buttons-container
-  > img{
+  > img {
   margin: 0px 40px;
 }
 .copyright {
@@ -113,17 +117,16 @@
 }
 @media (max-width: 600px) {
   .contactus-container
-  .item-contactus
-  .right-container
-  .follow-buttons-container
-  > img{
+    .item-contactus
+    .right-container
+    .follow-buttons-container
+    > img {
     margin: 0px 15px;
   }
   .contactus-container
-  .item-contactus
-  .right-container
-  .follow-buttons-container {
-    margin: 0!important;
+    .item-contactus
+    .right-container
+    .follow-buttons-container {
+    margin: 0 !important;
   }
-
 }

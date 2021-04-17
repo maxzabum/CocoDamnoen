@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 import Landingheader from "../../images/store_page_01.jpg";
 import Carditem from "../../components/CardItem/Carditem";
@@ -7,6 +7,11 @@ import NewsIMG2 from "../../images/new_preview_01.jpg";
 import NewsIMG1 from "../../images/img-preview-04.jpg";
 import LandingheaderMobile from "../../images/store_page_01_mobile.jpg";
 const Storepage = ({ screenWidth, ...props }) => {
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    // console.log(location);
+    return () => window.scrollTo(0, 0);
+  }, []);
   const news = [
     {
       id: 1,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OurStoryHeader from "../../images/ourstory_page_01.jpg";
 import OurStoryIMG1 from "../../images/ourstory-content-01.png";
 import OurStoryIMG2 from "../../images/ourstory-content-02.png";
@@ -6,6 +6,11 @@ import OurStoryIMG3 from "../../images/ourstory-content-03.png";
 import OurStoryHeaderMobile from "../../images/ourstory_page_mobile.jpg";
 import "./styles.css";
 const Ourstorypage = ({ screenWidth, ...props }) => {
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    // console.log(location);
+    return () => window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="main-ourstorypage-container">
       <div className="item-container ourstory-header">

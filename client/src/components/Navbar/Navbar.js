@@ -1,7 +1,6 @@
 import React from "react";
 import DehazeRoundedIcon from "@material-ui/icons/DehazeRounded";
 import Logo from "../../images/logo.png";
-import ThaiSVG from "./thailand.svg";
 import "./navbar.css";
 import { useHistory } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
@@ -23,38 +22,46 @@ const Navbar = ({
             <img
               src={Logo}
               className="logo"
-              onClick={() => history.push("/")}
+              onClick={() => {
+                history.push("/");
+              }}
               alt="img"
             />
             <ul className="nav-right-items">
               <li
                 href="#"
                 className="product-button m-r-10"
-                onClick={() => history.push("/ourstory")}
+                onClick={() => {
+                  history.push("/ourstory");
+                }}
               >
                 Ourstory
               </li>
               <li
                 href="#"
                 className="product-button m-r-10"
-                onClick={() => history.push("/news")}
+                onClick={() => {
+                  history.push("/news");
+                }}
               >
                 NEWS
               </li>
               <li
                 href="#"
                 className="product-button m-r-10"
-                onClick={() => history.push("/store")}
+                onClick={() => {
+                  history.push("/store");
+                }}
               >
                 STORE
               </li>
               <li
                 href="#"
                 className="product-button m-r-10"
-                onClick={() => history.push("/store")}
-              >
-                <img src={ThaiSVG} alt="sw-lang" />
-              </li>
+                onClick={() => {
+                  history.push("/store");
+                }}
+              ></li>
             </ul>
           </div>
         ) : (
@@ -63,7 +70,10 @@ const Navbar = ({
               <img
                 src={Logo}
                 className="logo"
-                onClick={() => history.push("/")}
+                onClick={() => {
+                  history.push("/");
+                  setActive(false);
+                }}
                 alt="img"
               />
               <SwitchTransition mode={"out-in"}>
@@ -72,9 +82,9 @@ const Navbar = ({
                   addEndListener={(node, done) => {
                     node.addEventListener("transitionend", done, false);
                   }}
-                  classNames="fade"
+                  classNames="fade-toggle"
                 >
-                  <div>
+                  <div className="toggle-button">
                     {active ? (
                       <CloseRoundedIcon
                         className={"close-icon "}
@@ -110,21 +120,30 @@ const Navbar = ({
                   <li
                     href="#"
                     className="product-button m-r-10"
-                    onClick={() => history.push("/ourstory")}
+                    onClick={() => {
+                      history.push("/ourstory");
+                      setActive(!active);
+                    }}
                   >
                     OURSTORY
                   </li>
                   <li
                     href="#"
                     className="product-button m-r-10"
-                    onClick={() => history.push("/news")}
+                    onClick={() => {
+                      history.push("/news");
+                      setActive(!active);
+                    }}
                   >
                     NEWS
                   </li>
                   <li
                     href="#"
                     className="product-button m-r-10"
-                    onClick={() => history.push("/store")}
+                    onClick={() => {
+                      history.push("/store");
+                      setActive(!active);
+                    }}
                   >
                     STORE
                   </li>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
 import { Switch, Route, useRouteMatch, useHistory } from "react-router-dom";
 import Landingheader from "../../images/new_page_01.jpg";
@@ -9,6 +9,11 @@ import NewsIMG1 from "../../images/img-preview-04.jpg";
 import DetailNew from "./DetailNewsPage/Detailnews";
 import NewsheaderMobile from "../../images/new_page_01_mobile.jpg";
 const Newspage = ({ screenWidth, ...props }) => {
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    // console.log(location);
+    return () => window.scrollTo(0, 0);
+  }, []);
   const { url } = useRouteMatch();
   const history = useHistory();
   const news = [
@@ -21,6 +26,8 @@ const Newspage = ({ screenWidth, ...props }) => {
       img: NewsIMG1,
       header:
         "Benefits Coconut water for health What is the best woman to drink?",
+      date: "12/01/1997",
+      writer: "admin dui",
     },
     {
       id: 2,
@@ -31,6 +38,8 @@ const Newspage = ({ screenWidth, ...props }) => {
         "    Girls, have you heard that coconut water helps women look radiant, soft, and also nourish the body? Adjust the hormones to balance women How true is this story? How much should I drink? When to drink? To be the best \n \nThairath Women invites women to find answers about the benefits of 'coconut water' to 'health'.\n \nThe benefits of 'coconut water' \n    - water coconut hormone estrogen. Helps the skin glow naturally white \n    - coconut water is extremely important to build collagen and elastin. Skin elasticity, firming help slow down the aging well \n    - coconut meat and coconut oil. Vitamins and minerals necessary for the body in its entirety, such as vitamin C, B vitamins, amino acids, calcium, magnesium, phosphorus, potassium, iron and fats that are beneficial to the body \n    - Coconut water is a natural body feeling refreshed. thirst, body absorbed within 5 minutes \n    - fruit juice is a mighty cold. Thereby cool off in the heat of the body \n    - helps detoxify toxic waste from the body. Or to detox itself.",
       header:
         "Benefits Coconut water for health What is the best woman to drink?",
+      date: "21/10/1997",
+      writer: "admin dum",
     },
     {
       id: 3,
@@ -41,6 +50,8 @@ const Newspage = ({ screenWidth, ...props }) => {
         "    Girls, have you heard that coconut water helps women look radiant, soft, and also nourish the body? Adjust the hormones to balance women How true is this story? How much should I drink? When to drink? To be the best \n \nThairath Women invites women to find answers about the benefits of 'coconut water' to 'health'.\n \nThe benefits of 'coconut water' \n    - water coconut hormone estrogen. Helps the skin glow naturally white \n    - coconut water is extremely important to build collagen and elastin. Skin elasticity, firming help slow down the aging well \n    - coconut meat and coconut oil. Vitamins and minerals necessary for the body in its entirety, such as vitamin C, B vitamins, amino acids, calcium, magnesium, phosphorus, potassium, iron and fats that are beneficial to the body \n    - Coconut water is a natural body feeling refreshed. thirst, body absorbed within 5 minutes \n    - fruit juice is a mighty cold. Thereby cool off in the heat of the body \n    - helps detoxify toxic waste from the body. Or to detox itself.",
       header:
         "Benefits Coconut water for health What is the best woman to drink?",
+      date: "31/01/1802",
+      writer: "admin dui",
     },
     {
       id: 4,
@@ -51,6 +62,8 @@ const Newspage = ({ screenWidth, ...props }) => {
         "    Girls, have you heard that coconut water helps women look radiant, soft, and also nourish the body? Adjust the hormones to balance women How true is this story? How much should I drink? When to drink? To be the best \n \nThairath Women invites women to find answers about the benefits of 'coconut water' to 'health'.\n \nThe benefits of 'coconut water' \n    - water coconut hormone estrogen. Helps the skin glow naturally white \n    - coconut water is extremely important to build collagen and elastin. Skin elasticity, firming help slow down the aging well \n    - coconut meat and coconut oil. Vitamins and minerals necessary for the body in its entirety, such as vitamin C, B vitamins, amino acids, calcium, magnesium, phosphorus, potassium, iron and fats that are beneficial to the body \n    - Coconut water is a natural body feeling refreshed. thirst, body absorbed within 5 minutes \n    - fruit juice is a mighty cold. Thereby cool off in the heat of the body \n    - helps detoxify toxic waste from the body. Or to detox itself.",
       header:
         "Benefits Coconut water for health What is the best woman to drink?",
+      date: "02/10/1997",
+      writer: "admin don",
     },
     {
       id: 5,
@@ -61,6 +74,8 @@ const Newspage = ({ screenWidth, ...props }) => {
         "    Girls, have you heard that coconut water helps women look radiant, soft, and also nourish the body? Adjust the hormones to balance women How true is this story? How much should I drink? When to drink? To be the best \n \nThairath Women invites women to find answers about the benefits of 'coconut water' to 'health'.\n \nThe benefits of 'coconut water' \n    - water coconut hormone estrogen. Helps the skin glow naturally white \n    - coconut water is extremely important to build collagen and elastin. Skin elasticity, firming help slow down the aging well \n    - coconut meat and coconut oil. Vitamins and minerals necessary for the body in its entirety, such as vitamin C, B vitamins, amino acids, calcium, magnesium, phosphorus, potassium, iron and fats that are beneficial to the body \n    - Coconut water is a natural body feeling refreshed. thirst, body absorbed within 5 minutes \n    - fruit juice is a mighty cold. Thereby cool off in the heat of the body \n    - helps detoxify toxic waste from the body. Or to detox itself.",
       header:
         "Benefits Coconut water for health What is the best woman to drink?",
+      date: "17/01/1997",
+      writer: "admin dan",
     },
     {
       id: 6,
@@ -71,6 +86,8 @@ const Newspage = ({ screenWidth, ...props }) => {
         "    Girls, have you heard that coconut water helps women look radiant, soft, and also nourish the body? Adjust the hormones to balance women How true is this story? How much should I drink? When to drink? To be the best \n \nThairath Women invites women to find answers about the benefits of 'coconut water' to 'health'.\n \nThe benefits of 'coconut water' \n    - water coconut hormone estrogen. Helps the skin glow naturally white \n    - coconut water is extremely important to build collagen and elastin. Skin elasticity, firming help slow down the aging well \n    - coconut meat and coconut oil. Vitamins and minerals necessary for the body in its entirety, such as vitamin C, B vitamins, amino acids, calcium, magnesium, phosphorus, potassium, iron and fats that are beneficial to the body \n    - Coconut water is a natural body feeling refreshed. thirst, body absorbed within 5 minutes \n    - fruit juice is a mighty cold. Thereby cool off in the heat of the body \n    - helps detoxify toxic waste from the body. Or to detox itself.",
       header:
         "Benefits Coconut water for health What is the best woman to drink?",
+      date: "27/01/1997",
+      writer: "admin dong",
     },
   ];
   const lastest_news = news[news.length - 1];

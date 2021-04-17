@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carditem from "../../components/CardItem/Carditem";
 import "./styles.css";
 import LandingheaderMobile from "../../images/landing_page_mobile.jpg";
@@ -18,6 +18,11 @@ import IMGPreview4 from "../../images/img-preview-04.jpg";
 import { useHistory } from "react-router-dom";
 import BoxContentMobile from "../../images/border-properties-mobile.png";
 const Homepage = ({ screenWidth, ...props }) => {
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    // console.log(location);
+    return () => window.scrollTo(0, 0);
+  }, []);
   const history = useHistory();
   return (
     <div className="main-homepage-container">

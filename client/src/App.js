@@ -6,19 +6,23 @@ import "./app.css";
 import Storepage from "./screens/StorePage/Storepage";
 import Ourstorypage from "./screens/OurstoryPage/Ourstorypage";
 import Contactus from "./components/Footer/Contactus";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import DetailNew from "./screens/NewsPage/DetailNewsPage/Detailnews";
-
+import {
+  //   TransitionGroup,
+  SwitchTransition,
+  CSSTransition,
+} from "react-transition-group";
 const App = (props) => {
-  const { location } = props;
+  const location = useLocation();
   const [width, setWindowWidth] = useState(0);
   const [active, setActive] = useState(false);
   useEffect(() => {
     updateDimensions();
-    // console.log(width)
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
+
   const updateDimensions = () => {
     const width = window.innerWidth;
     setWindowWidth(width);
@@ -31,28 +35,34 @@ const App = (props) => {
           setActive(false);
         }}
       >
-        <Switch location={location}>
-          <Route exact path="/">
-            <HomePage screenWidth={width} />
-          </Route>
-          <Route path="/ourstory">
-            <Ourstorypage screenWidth={width} />
-          </Route>
-          <Route
-            // exact
-            path="/news"
+        <SwitchTransition mode="out-in">
+          <CSSTransition
+            key={location.pathname}
+            classNames="fade"
+            addEndListener={(node, done) => {
+              node.addEventListener("transitionend", done, false);
+            }}
           >
-            <Newspage screenWidth={width} />
-          </Route>
-          <Route path="/store">
-            <Storepage screenWidth={width} />
-          </Route>
-
-          <Route component={DetailNew} />
-          {/* <Ourstorypage/> */}
-          {/* <Newspage/> */}
-          {/* <Storepage/> */}
-        </Switch>
+            <Switch location={location}>
+              <Route exact path="/">
+                <HomePage screenWidth={width} />
+              </Route>
+              <Route path="/ourstory">
+                <Ourstorypage screenWidth={width} />
+              </Route>
+              <Route
+                // exact
+                path="/news"
+              >
+                <Newspage screenWidth={width} />
+              </Route>
+              <Route path="/store">
+                <Storepage screenWidth={width} />
+              </Route>
+              <Route component={DetailNew} />
+            </Switch>
+          </CSSTransition>
+        </SwitchTransition>
         <Contactus />
       </div>
     </div>

@@ -10,12 +10,10 @@ const Contactus = () => {
       <div className="item-contactus">
         <div className="contact-detail">
           <div className="left-container">
-            <p>CONTACT US</p>
-            <p>
-              377/1 Moo 17, Tumbol Sila, Amphur Muang, Khon Kaen, Thailand 40000{" "}
-            </p>
-            <p>(+66) 084-204-5999 </p>
-            <p>sales@cocodamnoen.com</p>
+            <p>Develop by</p>
+            <p>Mr.apakorn buakum</p>
+            <p>(+66) 062-196-1964 </p>
+            <p>maxzabum1150@hotmail.com</p>
           </div>
           <div className="right-container">
             <div className="email-subscribe-container">
@@ -32,7 +30,7 @@ const Contactus = () => {
           </div>
         </div>
         <div className="copyright">
-          <p>© Riseplus Technology. All Rights Reserved 2018.</p>
+          <p>Designed by © Riseplus Technology. All Rights Reserved 2018.</p>
         </div>
       </div>
     </div>
