@@ -155,7 +155,7 @@
 }
 @media (max-width: 1024px) {
   .main-ourstorypage-container .ourstory-header {
-    height: 55vh;
+    height: 50%;
   }
   .main-ourstorypage-container .ourstory-1 > p {
     width: 80%;
