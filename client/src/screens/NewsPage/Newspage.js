@@ -10,8 +10,6 @@ import DetailNew from "./DetailNewsPage/Detailnews";
 import NewsheaderMobile from "../../images/new_page_01_mobile.jpg";
 const Newspage = ({ screenWidth, ...props }) => {
   useEffect(() => {
-    // window.scrollTo(0, 0);
-    // console.log(location);
     return () => window.scrollTo(0, 0);
   }, []);
   const { url } = useRouteMatch();
@@ -192,17 +190,19 @@ const Newspage = ({ screenWidth, ...props }) => {
             <div className="news-latest-container">
               <div className="news-latest-item">
                 <p>LATEST</p>
-                <img src={IMGBorder2} alt="border" />
-                <div
-                  className="new-lastest-content"
-                  onClick={() => history.push(`${url}/${lastest_news.id}`)}
-                >
-                  <img src={NewsIMG2} alt="img" />
-                  <div className="description">
-                    <p className="text-header">{lastest_news.header}</p>
-                    {screenWidth > 1024 && (
-                      <p className="text-desc">{lastest_news.desc}</p>
-                    )}
+                <div className="items-container">
+                  <img src={IMGBorder2} alt="border" />
+                  <div
+                    className="new-lastest-content"
+                    onClick={() => history.push(`${url}/${lastest_news.id}`)}
+                  >
+                    <img src={NewsIMG2} alt="img" />
+                    <div className="description">
+                      <p className="text-header">{lastest_news.header}</p>
+                      {screenWidth > 1024 && (
+                        <p className="text-desc">{lastest_news.desc}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
