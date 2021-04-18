@@ -8,8 +8,6 @@ import NewsIMG1 from "../../images/img-preview-04.jpg";
 import LandingheaderMobile from "../../images/store_page_01_mobile.jpg";
 const Storepage = ({ screenWidth, ...props }) => {
   useEffect(() => {
-    // window.scrollTo(0, 0);
-    // console.log(location);
     return () => window.scrollTo(0, 0);
   }, []);
   const news = [
@@ -86,7 +84,6 @@ const Storepage = ({ screenWidth, ...props }) => {
         borderW={"100%"}
         fontSize={{ textHeader: "clamp(12px, 2vw, 24px)" }}
         top={"50%"}
-        // onClick={()=>history.push(`${url}/${newse.id}`)}
       />
     );
   });
@@ -103,7 +100,6 @@ const Storepage = ({ screenWidth, ...props }) => {
           borderW={"100%"}
           fontSize={{ textHeader: "clamp(12px, 2vw, 24px)" }}
           top={"50%"}
-          // onClick={()=>history.push(`${url}/${newse.id}`)}
         />
       );
     }
@@ -125,26 +121,29 @@ const Storepage = ({ screenWidth, ...props }) => {
         <div className="store-latest-container">
           <div className="store-latest-item">
             <p>NEWEst</p>
-            <img src={IMGBorder2} alt="border" />
-            <div className="store-lastest-content">
-              <img src={NewsIMG2} alt="img" />
-              <div className="description">
-                <p className="text-header">THAI AROMATIC COCONUT JELLY DRINK</p>
-                {screenWidth > 1024 && (
-                  <p className="text-desc">
-                    &nbsp;&nbsp;&nbsp;&nbsp;Quality Aromatic coconuts come from
-                    a special soil in Damnoen Saduak, Ratchaburi, Thailand. The
-                    soil that they are grown in, used to be under sea level in
-                    the past. The aromatic coconuts contain all necessary
-                    vitamins and minerals that are beneficial for good health.
-                    Our quality product is made in Thailand. We capture the
-                    freshness of the coconut juice.
+            <div className="items-container">
+              <img src={IMGBorder2} alt="border" />
+              <div className="store-lastest-content">
+                <img src={NewsIMG2} alt="img" />
+                <div className="description">
+                  <p className="text-header">
+                    THAI AROMATIC COCONUT JELLY DRINK
                   </p>
-                )}
+                  {screenWidth > 1024 && (
+                    <p className="text-desc">
+                      &nbsp;&nbsp;&nbsp;&nbsp;Quality Aromatic coconuts come
+                      from a special soil in Damnoen Saduak, Ratchaburi,
+                      Thailand. The soil that they are grown in, used to be
+                      under sea level in the past. The aromatic coconuts contain
+                      all necessary vitamins and minerals that are beneficial
+                      for good health. Our quality product is made in Thailand.
+                      We capture the freshness of the coconut juice.
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-          {/* </div> */}
         </div>
         <div className="store-recommended-container">
           <p>reccommended</p>
