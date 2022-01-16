@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b3da5a0-26dd-4f8a-b472-c4c26d09740f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/images/border-properties-mobile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/images/landing_page_01_mobile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+                <branch-info repo="$PROJECT_DIR$" source="client" />
+                <branch-info repo="$PROJECT_DIR$" source="server" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/client" />
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
+                <branch-info repo="$PROJECT_DIR$" source="origin/server" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProjectId" id="1qrQgsVDcIIx2E3RFtdjSkzvewQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b3da5a0-26dd-4f8a-b472-c4c26d09740f" name="Default Changelist" comment="" />
+      <created>1617835344089</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617835344089</updated>
+      <workItem from="1617835345453" duration="486000" />
+      <workItem from="1617964257893" duration="730000" />
+      <workItem from="1617967861516" duration="338000" />
+      <workItem from="1618049509330" duration="9139000" />
+      <workItem from="1618303681241" duration="171000" />
+      <workItem from="1618304094653" duration="38913000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="60" />
+                  <entry key="3" value="90" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="453" y="278" key="#Notifications" timestamp="1618402484613">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="453" y="278" key="#Notifications/0.0.1440.900@0.0.1440.900" timestamp="1618402484613" />
+    <state x="304" y="22" key="CommitChangelistDialog2" timestamp="1618402855287">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="304" y="22" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1618402855287" />
+    <state x="144" y="76" key="DiffContextDialog" timestamp="1618402894050">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="76" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1618402894050" />
+    <state x="144" y="76" key="MergeDialog" timestamp="1618403065579">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="144" y="76" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1618403065579" />
+    <state x="421" y="205" width="597" height="490" key="find.popup" timestamp="1618399771579">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="421" y="205" width="597" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1618399771579" />
+    <state x="465" y="224" width="572" height="490" key="find.popup/62.25.1378.875@62.25.1378.875" timestamp="1618322675811" />
+    <state x="473" y="167" key="git4idea.branch.GitSmartOperationDialog" timestamp="1618403060396">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="473" y="167" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1618403060396" />
+    <state x="458" y="303" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1618403478721">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="303" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1440.900@0.0.1440.900" timestamp="1618403478721" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1618325382329">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1618325382329" />
+  </component>
+</project>
