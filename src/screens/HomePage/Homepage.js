@@ -17,10 +17,22 @@ import IMGPreview3 from "../../images/img-preview-03.jpg";
 import IMGPreview4 from "../../images/img-preview-04.jpg";
 import { useHistory } from "react-router-dom";
 import BoxContentMobile from "../../images/border-properties-mobile.png";
+import axios from "axios";
 const Homepage = ({ screenWidth, ...props }) => {
   useEffect(() => {
-    // window.scrollTo(0, 0);
-    // console.log(location);
+    axios
+      .get("https://cocodamnoenclone.herokuapp.com/user")
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
     return () => window.scrollTo(0, 0);
   }, []);
   const history = useHistory();
