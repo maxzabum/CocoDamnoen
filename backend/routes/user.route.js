@@ -93,7 +93,7 @@ router.route("/login").post(async (req, res) => {
 router.route("/").get((req, res) => {
   userSchema.find((error, data) => {
     if (error) {
-      return next(error);
+      res.status(500).json(error);
     } else {
       res.json(data);
     }
