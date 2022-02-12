@@ -8,10 +8,10 @@ dbConfig = require("./database/db");
 path = require("path");
 
 // Express Route
-const studentRoute = require("../backend/routes/student.route");
-const cartoonRoute = require("../backend/routes/catoon.route");
-const productRoute = require("../backend/routes/product.route");
-const userRoute = require("../backend/routes/user.route");
+const studentRoute = require("./routes/student.route");
+const cartoonRoute = require("./routes/catoon.route");
+const productRoute = require("./routes/product.route");
+const userRoute = require("./routes/user.route");
 
 // Connecting MongDB Database
 mongoose.Promise = global.Promise;
