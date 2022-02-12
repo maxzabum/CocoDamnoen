@@ -58,10 +58,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // PORT
-const port = process.env.PORT || 4000;
-const server = app.listen(port, () => {
-  console.log("Connected to port " + port);
-});
+// const port = process.env.PORT || 4000;
 
 // 404 Error
 app.use((req, res, next) => {
@@ -73,4 +70,7 @@ app.use(function (err, req, res, next) {
   console.error(err.message);
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
+});
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Connected to port ");
 });
