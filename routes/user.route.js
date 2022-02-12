@@ -31,7 +31,7 @@ router.route("/create-user").post(async (req, res, next) => {
       lastname: req.body.lastname,
       role: req.body.role,
       phone: req.body.phone,
-      // create_date: Date.now(),
+      create_date: Date.now(),
     });
     const token = jwt.sign({ user_id: user._id, username }, "qwertyuiop", {
       expiresIn: "2h",
@@ -116,7 +116,12 @@ router.route("/update-user/:id").put((req, res, next) => {
   userSchema.findByIdAndUpdate(
     req.params.id,
     {
-      $set: req.body,
+      username: req.body.username,
+      name: req.body.name,
+      lastname: req.body.lastname,
+      role: req.body.role,
+      phone: req.body.phone,
+      modify_date: Date.now(),
     },
     (error, data) => {
       if (error) {

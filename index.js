@@ -13,6 +13,8 @@ const cartoonRoute = require("./routes/catoon.route");
 const productRoute = require("./routes/product.route");
 const userRoute = require("./routes/user.route");
 
+const newsRoute = require("./routes/news.route");
+
 // Connecting MongDB Database
 mongoose.Promise = global.Promise;
 mongoose
@@ -48,6 +50,8 @@ app.use("/students", studentRoute);
 app.use("/cartoon", cartoonRoute);
 app.use("/product", productRoute);
 app.use("/user", userRoute);
+app.use("/news", newsRoute);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
