@@ -1,24 +1,27 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let userSchema = new Schema(
+let contactSchema = new Schema(
   {
-    username: {
-      type: String,
-    },
-    password: {
-      type: String,
-    },
-    name: {
-      type: String,
-    },
-    lastname: {
-      type: String,
-    },
-    role: {
+    address: {
       type: String,
     },
     phone: {
+      type: String,
+    },
+    mail: {
+      type: String,
+    },
+    facebook: {
+      type: String,
+    },
+    twitter: {
+      type: String,
+    },
+    line: {
+      type: String,
+    },
+    instagram: {
       type: String,
     },
     create_date: {
@@ -29,8 +32,8 @@ let userSchema = new Schema(
     },
   },
   {
-    collection: "user",
+    collection: "contact",
   }
 );
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Contact", contactSchema);

@@ -31,41 +31,33 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 // Student model
-let productSchema = require("../models/Product");
+let newsSchema = require("../models/News");
 
-// Create product
+// Create news
 router
-  .route("/create-product")
+  .route("/create-news")
   .post(upload.single("image"), auth, (req, res, next) => {
-    const product = new productSchema({
+    const news = new newsSchema({
       _id: new mongoose.Types.ObjectId(),
-      title: {
-        text: req.body.title.text,
-        text_align: req.body.title.text_align,
-        text_color: req.body.title.text_color,
-      },
-      description: {
-        text: req.body.description.text,
-        text_align: req.body.description.text_align,
-        text_color: req.body.description.text_color,
-      },
+      title: req.body.title,
+      description: req.body.description,
       image: req.file.path,
+      type: req.body.type,
       create_date: Date.now(),
     });
-    // res.json(product);
-    productSchema.create(product, (error, data) => {
+    newsSchema.create(news, (error, data) => {
       if (error) {
         return next(error);
       } else {
-        console.log(product);
-        res.json(product);
+        console.log(news);
+        res.json(news);
       }
     });
   });
 
-// Read product
+// Read news
 router.route("/").get((req, res) => {
-  productSchema.find((error, data) => {
+  newsSchema.find((error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -74,9 +66,9 @@ router.route("/").get((req, res) => {
   });
 });
 
-// Get single product
-router.route("/edit-product/:id").get((req, res) => {
-  productSchema.findById(req.params.id, (error, data) => {
+// Get single news
+router.route("/edit-news/:id").get((req, res) => {
+  newsSchema.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -85,28 +77,34 @@ router.route("/edit-product/:id").get((req, res) => {
   });
 });
 
-// Update product
-router.route("/update-product/:id").put(auth, (req, res, next) => {
-  productSchema.findByIdAndUpdate(
-    req.params.id,
-    {
-      $set: req.body,
-    },
-    (error, data) => {
-      if (error) {
-        return next(error);
-        console.log(error);
-      } else {
-        res.json(data);
-        console.log("product updated successfully");
+// Update news
+router
+  .route("/update-news/:id")
+  .put(upload.single("image"), auth, (req, res, next) => {
+    newsSchema.findByIdAndUpdate(
+      req.params.id,
+      {
+        title: req.body.title,
+        description: req.body.description,
+        image: req.file.path,
+        type: req.body.type,
+        modify_date: Date.now(),
+      },
+      (error, data) => {
+        if (error) {
+          return next(error);
+          console.log(error);
+        } else {
+          res.json(data);
+          console.log("product updated successfully");
+        }
       }
-    }
-  );
-});
+    );
+  });
 
-// Delete student
-router.route("/delete-product/:id").delete(auth, (req, res, next) => {
-  studentSchema.findByIdAndRemove(req.params.id, (error, data) => {
+// Delete news
+router.route("/delete-news/:id").delete(auth, (req, res, next) => {
+  newsSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {
