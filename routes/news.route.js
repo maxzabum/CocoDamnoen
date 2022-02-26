@@ -2,6 +2,7 @@ let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
 
+const auth = require("../middleware/auth");
 // upload image
 const multer = require("multer");
 
@@ -33,24 +34,26 @@ const upload = multer({
 let newsSchema = require("../models/News");
 
 // Create news
-router.route("/create-news").post(upload.single("image"), (req, res, next) => {
-  const news = new newsSchema({
-    _id: new mongoose.Types.ObjectId(),
-    title: req.body.title,
-    description: req.body.description,
-    image: req.file.path,
-    type: req.body.type,
-    create_date: Date.now(),
+router
+  .route("/create-news")
+  .post(upload.single("image"), auth, (req, res, next) => {
+    const news = new newsSchema({
+      _id: new mongoose.Types.ObjectId(),
+      title: req.body.title,
+      description: req.body.description,
+      image: req.file.path,
+      type: req.body.type,
+      create_date: Date.now(),
+    });
+    newsSchema.create(news, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        console.log(news);
+        res.json(news);
+      }
+    });
   });
-  newsSchema.create(news, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      console.log(news);
-      res.json(news);
-    }
-  });
-});
 
 // Read news
 router.route("/").get((req, res) => {
@@ -77,7 +80,7 @@ router.route("/edit-news/:id").get((req, res) => {
 // Update news
 router
   .route("/update-news/:id")
-  .put(upload.single("image"), (req, res, next) => {
+  .put(upload.single("image"), auth, (req, res, next) => {
     newsSchema.findByIdAndUpdate(
       req.params.id,
       {
@@ -99,9 +102,9 @@ router
     );
   });
 
-// Delete student
-router.route("/delete-product/:id").delete((req, res, next) => {
-  studentSchema.findByIdAndRemove(req.params.id, (error, data) => {
+// Delete news
+router.route("/delete-news/:id").delete(auth, (req, res, next) => {
+  newsSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {

@@ -2,6 +2,7 @@ let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
 
+const auth = require("../middleware/auth");
 // upload image
 const multer = require("multer");
 
@@ -35,13 +36,23 @@ let productSchema = require("../models/Product");
 // Create product
 router
   .route("/create-product")
-  .post(upload.single("image"), (req, res, next) => {
+  .post(upload.single("image"), auth, (req, res, next) => {
     const product = new productSchema({
       _id: new mongoose.Types.ObjectId(),
-      title: req.body.title,
-      description: req.body.description,
+      title: {
+        text: req.body.title.text,
+        text_align: req.body.title.text_align,
+        text_color: req.body.title.text_color,
+      },
+      description: {
+        text: req.body.description.text,
+        text_align: req.body.description.text_align,
+        text_color: req.body.description.text_color,
+      },
       image: req.file.path,
+      create_date: Date.now(),
     });
+    // res.json(product);
     productSchema.create(product, (error, data) => {
       if (error) {
         return next(error);
@@ -75,7 +86,7 @@ router.route("/edit-product/:id").get((req, res) => {
 });
 
 // Update product
-router.route("/update-product/:id").put((req, res, next) => {
+router.route("/update-product/:id").put(auth, (req, res, next) => {
   productSchema.findByIdAndUpdate(
     req.params.id,
     {
@@ -94,7 +105,7 @@ router.route("/update-product/:id").put((req, res, next) => {
 });
 
 // Delete student
-router.route("/delete-product/:id").delete((req, res, next) => {
+router.route("/delete-product/:id").delete(auth, (req, res, next) => {
   studentSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);

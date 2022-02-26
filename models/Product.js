@@ -3,10 +3,14 @@ const Schema = mongoose.Schema;
 let productSchema = new Schema(
   {
     title: {
-      type: String,
+      text: String,
+      text_align: String,
+      text_color: String,
     },
     description: {
-      type: String,
+      text: String,
+      text_align: String,
+      text_color: String,
     },
     image: {
       type: String,

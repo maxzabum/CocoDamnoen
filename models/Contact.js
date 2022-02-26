@@ -1,33 +1,39 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let cartoonSchema = new Schema(
+let contactSchema = new Schema(
   {
-    name: {
+    address: {
       type: String,
     },
-    title: {
+    phone: {
       type: String,
     },
-    type: {
-      type: Number,
-    },
-    price: {
+    mail: {
       type: String,
     },
-    count: {
+    facebook: {
       type: String,
     },
-    link: {
+    twitter: {
       type: String,
     },
-    status: {
+    line: {
       type: String,
+    },
+    instagram: {
+      type: String,
+    },
+    create_date: {
+      type: Date,
+    },
+    modify_date: {
+      type: Date,
     },
   },
   {
-    collection: "cartoon",
+    collection: "contact",
   }
 );
 
-module.exports = mongoose.model("Cartoon", cartoonSchema);
+module.exports = mongoose.model("Contact", contactSchema);

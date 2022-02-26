@@ -10,7 +10,7 @@ let userSchema = require("../models/User");
 const auth = require("../middleware/auth");
 
 // Create User
-router.route("/create-user").post(async (req, res, next) => {
+router.route("/create-user").post(auth, async (req, res, next) => {
   try {
     const { username, password, name, lastname, role, phone } = req.body;
     if (!(username && password && name && lastname && role && phone)) {
@@ -80,8 +80,10 @@ router.route("/login").post(async (req, res) => {
         expiresIn: "2h",
       });
       user.token = token;
-      const _user = user.token;
-
+      const _user = {
+        user,
+        token,
+      };
       res.status(200).json(_user);
     }
   } catch (err) {
@@ -112,7 +114,7 @@ router.route("/edit-user/:id").get((req, res) => {
 });
 
 // Update User
-router.route("/update-user/:id").put((req, res, next) => {
+router.route("/update-user/:id").put(auth, (req, res, next) => {
   userSchema.findByIdAndUpdate(
     req.params.id,
     {
@@ -136,7 +138,7 @@ router.route("/update-user/:id").put((req, res, next) => {
 });
 
 // Delete User
-router.route("/delete-user/:id").delete((req, res, next) => {
+router.route("/delete-user/:id").delete(auth, (req, res, next) => {
   userSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);

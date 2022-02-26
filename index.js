@@ -8,20 +8,22 @@ dbConfig = require("./database/db");
 path = require("path");
 
 // Express Route
-const studentRoute = require("./routes/student.route");
-const cartoonRoute = require("./routes/catoon.route");
 const productRoute = require("./routes/product.route");
 const userRoute = require("./routes/user.route");
-
 const newsRoute = require("./routes/news.route");
+const contactRoute = require("./routes/contact.route");
+const storeRoute = require("./routes/store.route");
 
 // Connecting MongDB Database
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(dbConfig.db, {
-    useNewUrlParser: true,
-    // useUnifiedTopology: true
-  })
+  .connect(
+    "mongodb+srv://maxzabum:maxzabum123@assetmentdb.22hfh.mongodb.net/CocoDamnoenDB?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      // useUnifiedTopology: true
+    }
+  )
   .then(
     () => {
       console.log("Database successfully connected");
@@ -46,11 +48,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use("/uploads", express.static("uploads"));
-app.use("/students", studentRoute);
-app.use("/cartoon", cartoonRoute);
 app.use("/product", productRoute);
 app.use("/user", userRoute);
 app.use("/news", newsRoute);
+app.use("/contact", contactRoute);
+app.use("/store", storeRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
