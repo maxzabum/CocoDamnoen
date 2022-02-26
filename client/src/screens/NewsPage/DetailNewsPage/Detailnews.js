@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles.css";
+import { IoArrowBack } from 'react-icons/io5';
+
 import { useHistory, useParams } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 const DetailNew = ({ news }) => {
   let { topicId } = useParams();
   const history = useHistory();
@@ -18,7 +19,7 @@ const DetailNew = ({ news }) => {
   return (
     <div className="main-detailnewpage-container">
       <div className="goback" onClick={() => history.replace("/news")}>
-        <ArrowBackIosIcon style={{ color: "#a99371" }} />
+        <IoArrowBack style={{ color: "#a99371" }} />
         <p>NEWS </p>
       </div>
       <div className="detailnew-header">

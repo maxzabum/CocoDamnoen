@@ -1,10 +1,12 @@
-import React from "react";
-import DehazeRoundedIcon from "@material-ui/icons/DehazeRounded";
+import React, { useState, useEffect } from "react";
+import { MdOutlineDehaze } from 'react-icons/md';
+import { IoClose } from 'react-icons/io5';
+
+
 import Logo from "../../images/logo.png";
 import "./navbar.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 const Navbar = ({
   isActive,
   onClick,
@@ -13,9 +15,19 @@ const Navbar = ({
   screenWidth,
   ...props
 }) => {
+  const [isShow, setIsShow] = useState(true);
+  const location = useLocation()
   const history = useHistory();
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setIsShow(false)
+    } else {
+      setIsShow(true)
+    }
+  }, [location]);
+
   return (
-    <div>
+    <>{isShow && <div>
       <div className={"nav-container"}>
         {screenWidth > 600 ? (
           <div className={"nav-container"}>
@@ -86,7 +98,7 @@ const Navbar = ({
                 >
                   <div className="toggle-button">
                     {active ? (
-                      <CloseRoundedIcon
+                      <IoClose
                         className={"close-icon "}
                         onClick={() => {
                           setActive(!active);
@@ -95,7 +107,7 @@ const Navbar = ({
                         }}
                       />
                     ) : (
-                      <DehazeRoundedIcon
+                      <MdOutlineDehaze
                         className={"dehaze-icon "}
                         onClick={() => {
                           setActive(!active);
@@ -153,7 +165,7 @@ const Navbar = ({
           </div>
         )}
       </div>
-    </div>
+    </div>}</>
   );
 };
 export default Navbar;

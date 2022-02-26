@@ -1,0 +1,10 @@
+.button-container{
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 1px 24px;
+    outline: none;
+    border: 1px solid;
+}
+/* .button-container:hover{
+    background-color: red;
+} */

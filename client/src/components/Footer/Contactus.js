@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./contactStyles.css";
 import FBIcon from "./fb.png";
 import IGIcon from "./instragram.png";
 import LineIcon from "./line.png";
 import TwiiterIcon from "./twitter.png";
+import { useHistory, useLocation } from "react-router-dom";
 const Contactus = () => {
+  const [isShow, setIsShow] = useState(true);
+  const location = useLocation()
+  const history = useHistory();
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setIsShow(false)
+    } else {
+      setIsShow(true)
+    }
+  }, [location]);
   return (
-    <div className="contactus-container">
+    <>{isShow && <div className="contactus-container">
       <div className="item-contactus">
         <div className="contact-detail">
           <div className="left-container">
@@ -33,7 +44,7 @@ const Contactus = () => {
           <p>Designed by © Riseplus Technology. All Rights Reserved 2018.</p>
         </div>
       </div>
-    </div>
+    </div>}</>
   );
 };
 export default Contactus;

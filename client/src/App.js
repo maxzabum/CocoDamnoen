@@ -3,6 +3,7 @@ import HomePage from "./screens/HomePage/Homepage";
 import Navbar from "./components/Navbar/Navbar";
 import Newspage from "./screens/NewsPage/Newspage";
 import "./app.css";
+import 'antd/dist/antd.css';
 import Storepage from "./screens/StorePage/Storepage";
 import Ourstorypage from "./screens/OurstoryPage/Ourstorypage";
 import Contactus from "./components/Footer/Contactus";
@@ -13,6 +14,8 @@ import {
   SwitchTransition,
   CSSTransition,
 } from "react-transition-group";
+import LoginPage from "./screens/LoginPage/LoginPage";
+import { AdminPage } from "./screens/AdminPage/AdminPage";
 const App = (props) => {
   const location = useLocation();
   const [width, setWindowWidth] = useState(0);
@@ -45,7 +48,14 @@ const App = (props) => {
           >
             <Switch location={location}>
               <Route exact path="/">
-                <HomePage screenWidth={width} />
+                {/* <HomePage screenWidth={width} /> */}
+                <AdminPage />
+
+                {/* <LoginPage /> */}
+              </Route>
+              <Route path="/admin">
+                {/* <HomePage screenWidth={width} /> */}
+                <AdminPage />
               </Route>
               <Route path="/ourstory">
                 <Ourstorypage screenWidth={width} />
