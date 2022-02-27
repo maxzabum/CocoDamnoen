@@ -1,14 +1,265 @@
-import React from 'react'
-import Button from '../../components/Button/Button'
-import EditableTable from '../../components/Table/Table'
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Button from "../../components/Button/Button";
+import EditableTable from "../../components/Table/Table";
+import { useForm, Controller } from "react-hook-form";
+import { Modal, Button as ButtonAntd } from "antd";
+import InputText from "../../components/InputText/InputText";
 const UserMenu = () => {
-    return (
-        <div className='menu-content-container'>
-            <Button label="Add" color={'red'} />
-            <EditableTable />
-        </div>
-    )
-}
+  const [userData, setUserData] = useState([]);
+  const [visible, setVisible] = useState(false);
+  const [confirmLoading, setConfirmLoading] = useState(false);
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      username: "",
+      password: "",
+      name: "",
+      lastname: "",
+      role: "",
+      phone: "",
+    },
+  });
+  const onSubmit = (data) => console.log(data);
+  useEffect(() => {
+    fetchUser();
+  }, []);
+  const showModal = () => {
+    setVisible(true);
+  };
 
-export default UserMenu
+  const handleOk = async (data) => {
+    console.log(data);
+    setConfirmLoading(true);
+    axios
+      .post(`https://cocodamnoenclone.herokuapp.com/user/create-user`, data, {
+        headers: {
+          "x-access-token":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA4NDZiY2ZjNzYwYWUwMjU4NTlkIiwidXNlcm5hbWUiOiJhYWEiLCJpYXQiOjE2NDU5NDQyOTYsImV4cCI6MTY0NTk1MTQ5Nn0.3BO1ecoeDK9PL1QXvn_cfuCek7dbxyx2brGr--aHDdg",
+        },
+      })
+      .then(function (response) {
+        // handle success
+
+        fetchUser();
+        reset();
+        setVisible(false);
+        setConfirmLoading(false);
+      })
+      .catch(function (error) {
+        // handle error
+        // console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+    // setTimeout(() => {
+    //   setVisible(false);
+    //   setConfirmLoading(false);
+    // }, 2000);
+  };
+  const handleCancel = () => {
+    console.log("Clicked cancel button");
+    setVisible(false);
+  };
+  const fieldValue = {
+    username: "",
+    name: "",
+    lastname: "",
+    role: "",
+    phone: "",
+  };
+  const userColumns = [
+    {
+      title: "Username",
+      dataIndex: "username",
+
+      width: "25%",
+      editable: true,
+    },
+    {
+      title: "Name",
+      dataIndex: "name",
+      width: "25%",
+      editable: true,
+    },
+    {
+      title: "Last Name",
+      dataIndex: "lastname",
+      width: "25%",
+      editable: true,
+    },
+    {
+      title: "Role",
+      dataIndex: "role",
+      width: "10%",
+      editable: true,
+    },
+    {
+      title: "Phone No.",
+      type: "number",
+      dataIndex: "phone",
+      width: "15%",
+      editable: true,
+    },
+  ];
+  const fetchUser = async () => {
+    axios
+      .get("https://cocodamnoenclone.herokuapp.com/user")
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+        if (response.data) {
+          const results = response.data.map((row) => ({
+            key: row._id,
+            ...row,
+          }));
+          console.log("results", results);
+          setUserData([...results]);
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  };
+  return (
+    <div className="menu-content-container">
+      <p className="text-header">User</p>
+      <Button label="Add" color={"red"} onClick={showModal} type={"button"} />
+      <Modal
+        title="Title"
+        visible={visible}
+        onOk={handleOk}
+        confirmLoading={confirmLoading}
+        onCancel={handleCancel}
+        footer={[
+          <ButtonAntd
+            form="user-form"
+            key="submit"
+            htmlType="submit"
+            loading={confirmLoading}
+          >
+            Add
+          </ButtonAntd>,
+          <ButtonAntd form="user-form" onClick={() => reset()}>
+            Reset
+          </ButtonAntd>,
+        ]}
+      >
+        <form
+          onSubmit={handleSubmit(handleOk)}
+          id="user-form"
+          className="form-container"
+        >
+          <Controller
+            name="username"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <InputText
+                {...field}
+                label={"username"}
+                error={errors.username}
+                placeholder={"username field"}
+                onChange={field.onChange}
+                type={"text"}
+              />
+            )}
+          />
+          <Controller
+            name="password"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <InputText
+                {...field}
+                label={"password"}
+                error={errors.password}
+                placeholder={"password field"}
+                onChange={field.onChange}
+                type={"password"}
+              />
+            )}
+          />
+          <Controller
+            name="name"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <InputText
+                {...field}
+                label={"First name"}
+                error={errors.name}
+                placeholder={"first name field"}
+                onChange={field.onChange}
+                type={"text"}
+              />
+            )}
+          />
+          <Controller
+            name="lastname"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <InputText
+                {...field}
+                label={"Last name"}
+                error={errors.lastname}
+                placeholder={"last name field"}
+                onChange={field.onChange}
+                type={"text"}
+              />
+            )}
+          />
+          <Controller
+            name="role"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <InputText
+                {...field}
+                label={"Role"}
+                error={errors.role}
+                placeholder={"role field"}
+                onChange={field.onChange}
+                type={"text"}
+              />
+            )}
+          />
+          <Controller
+            name="phone"
+            control={control}
+            rules={{ required: true }}
+            render={({ field }) => (
+              <InputText
+                {...field}
+                label={"Phone"}
+                error={errors.phone}
+                placeholder={"phone field"}
+                onChange={field.onChange}
+                type={"text"}
+              />
+            )}
+          />
+        </form>
+      </Modal>
+      <EditableTable
+        columnsT={userColumns}
+        datas={userData}
+        field={fieldValue}
+        apiUpdate={"https://cocodamnoenclone.herokuapp.com/user/update-user/"}
+        apiDelete={"https://cocodamnoenclone.herokuapp.com/user/delete-user/"}
+      />
+    </div>
+  );
+};
+
+export default UserMenu;

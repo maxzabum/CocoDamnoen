@@ -32,7 +32,7 @@ export const AdminPage = () => {
         setPage(page.key)
     }
     return (
-        <Layout style={{ minHeight: '100vh' }}>
+        <Layout style={{ minHeight: '100vh' }} className="main-admin-layout-container">
             <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
                 <img src={LogoImage} alt="img-logo" className='logo' />
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" onSelect={onSelectMenu}>
