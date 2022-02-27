@@ -41,7 +41,7 @@ router
       _id: new mongoose.Types.ObjectId(),
       title: req.body.title,
       description: req.body.description,
-      image: req.file.path,
+      image: req.file.path.replace(/\s/g, ""),
       type: req.body.type,
       create_date: Date.now(),
     });
