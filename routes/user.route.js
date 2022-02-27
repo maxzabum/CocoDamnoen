@@ -10,7 +10,7 @@ let userSchema = require("../models/User");
 const auth = require("../middleware/auth");
 
 // Create User
-router.route("/create-user").post(async (req, res, next) => {
+router.route("/create-user").post(auth, async (req, res, next) => {
   try {
     const { username, password, name, lastname, role, phone } = req.body;
     if (!(username && password && name && lastname && role && phone)) {
@@ -31,7 +31,7 @@ router.route("/create-user").post(async (req, res, next) => {
       lastname: req.body.lastname,
       role: req.body.role,
       phone: req.body.phone,
-      // create_date: Date.now(),
+      create_date: Date.now(),
     });
     const token = jwt.sign({ user_id: user._id, username }, "qwertyuiop", {
       expiresIn: "2h",
@@ -80,8 +80,10 @@ router.route("/login").post(async (req, res) => {
         expiresIn: "2h",
       });
       user.token = token;
-      const _user = user.token;
-
+      const _user = {
+        user,
+        token,
+      };
       res.status(200).json(_user);
     }
   } catch (err) {
@@ -112,11 +114,16 @@ router.route("/edit-user/:id").get((req, res) => {
 });
 
 // Update User
-router.route("/update-user/:id").put((req, res, next) => {
+router.route("/update-user/:id").put(auth, (req, res, next) => {
   userSchema.findByIdAndUpdate(
     req.params.id,
     {
-      $set: req.body,
+      username: req.body.username,
+      name: req.body.name,
+      lastname: req.body.lastname,
+      role: req.body.role,
+      phone: req.body.phone,
+      modify_date: Date.now(),
     },
     (error, data) => {
       if (error) {
@@ -131,7 +138,7 @@ router.route("/update-user/:id").put((req, res, next) => {
 });
 
 // Delete User
-router.route("/delete-user/:id").delete((req, res, next) => {
+router.route("/delete-user/:id").delete(auth, (req, res, next) => {
   userSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);

@@ -24,6 +24,9 @@ let userSchema = new Schema(
     create_date: {
       type: Date,
     },
+    modify_date: {
+      type: Date,
+    },
   },
   {
     collection: "user",
