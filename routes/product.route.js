@@ -39,16 +39,8 @@ router
   .post(upload.single("image"), auth, (req, res, next) => {
     const product = new productSchema({
       _id: new mongoose.Types.ObjectId(),
-      title: {
-        text: req.body.title.text,
-        text_align: req.body.title.text_align,
-        text_color: req.body.title.text_color,
-      },
-      description: {
-        text: req.body.description.text,
-        text_align: req.body.description.text_align,
-        text_color: req.body.description.text_color,
-      },
+      title: req.body.title,
+      description: req.body.description,
       image: req.file.path,
       create_date: Date.now(),
     });
@@ -90,7 +82,10 @@ router.route("/update-product/:id").put(auth, (req, res, next) => {
   productSchema.findByIdAndUpdate(
     req.params.id,
     {
-      $set: req.body,
+      title: req.body.title,
+      description: req.body.description,
+      image: req.file.path,
+      modify_date: Date.now(),
     },
     (error, data) => {
       if (error) {
