@@ -42,6 +42,7 @@ router
       title: req.body.title,
       description: req.body.description,
       image: req.file.path.replace(/\s/g, ""),
+      type: req.body.type,
       create_date: Date.now(),
     });
     // res.json(product);
@@ -86,6 +87,7 @@ router.route("/update-product/:id").put(auth, (req, res, next) => {
         title: req.body.title,
         description: req.body.description,
         image: req.file.path,
+        type: req.body.type,
         modify_date: Date.now(),
       },
       (error, data) => {
@@ -104,6 +106,7 @@ router.route("/update-product/:id").put(auth, (req, res, next) => {
       {
         title: req.body.title,
         description: req.body.description,
+        type: req.body.type,
         modify_date: Date.now(),
       },
       (error, data) => {
