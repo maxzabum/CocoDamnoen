@@ -79,24 +79,44 @@ router.route("/edit-product/:id").get((req, res) => {
 
 // Update product
 router.route("/update-product/:id").put(auth, (req, res, next) => {
-  productSchema.findByIdAndUpdate(
-    req.params.id,
-    {
-      title: req.body.title,
-      description: req.body.description,
-      image: req.file.path,
-      modify_date: Date.now(),
-    },
-    (error, data) => {
-      if (error) {
-        return next(error);
-        console.log(error);
-      } else {
-        res.json(data);
-        console.log("product updated successfully");
+  try {
+    productSchema.findByIdAndUpdate(
+      req.params.id,
+      {
+        title: req.body.title,
+        description: req.body.description,
+        image: req.file.path,
+        modify_date: Date.now(),
+      },
+      (error, data) => {
+        if (error) {
+          return next(error);
+          console.log(error);
+        } else {
+          res.json(data);
+          console.log("product updated successfully");
+        }
       }
-    }
-  );
+    );
+  } catch (error) {
+    productSchema.findByIdAndUpdate(
+      req.params.id,
+      {
+        title: req.body.title,
+        description: req.body.description,
+        modify_date: Date.now(),
+      },
+      (error, data) => {
+        if (error) {
+          return next(error);
+          console.log(error);
+        } else {
+          res.json(data);
+          console.log("product updated successfully");
+        }
+      }
+    );
+  }
 });
 
 // Delete student
