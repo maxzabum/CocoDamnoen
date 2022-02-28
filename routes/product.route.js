@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     cb(null, "./uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, new Date().toDateString() + file.originalname);
+    cb(null, new Date().toDateString().replace(/\s/g, "") + file.originalname);
   },
 });
 
@@ -41,7 +41,7 @@ router
       _id: new mongoose.Types.ObjectId(),
       title: req.body.title,
       description: req.body.description,
-      image: req.file.path,
+      image: req.file.path.replace(/\s/g, ""),
       create_date: Date.now(),
     });
     // res.json(product);
