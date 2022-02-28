@@ -3,17 +3,19 @@ const Schema = mongoose.Schema;
 let productSchema = new Schema(
   {
     title: {
-      text: String,
-      text_align: String,
-      text_color: String,
+      type: String,
     },
     description: {
-      text: String,
-      text_align: String,
-      text_color: String,
+      type: String,
     },
     image: {
       type: String,
+    },
+    create_date: {
+      type: Date,
+    },
+    modify_date: {
+      type: Date,
     },
   },
   {
