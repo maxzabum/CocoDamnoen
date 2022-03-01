@@ -47,12 +47,12 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(cookieParser());
-app.use("/api/uploads", express.static("uploads"));
-app.use("/api/product", productRoute);
-app.use("/api/user", userRoute);
-app.use("/api/news", newsRoute);
-app.use("/api/contact", contactRoute);
-app.use("/api/store", storeRoute);
+app.use("/api/v1/uploads", express.static("uploads"));
+app.use("/api/v1/product", productRoute);
+app.use("/api/v1/user", userRoute);
+app.use("/api/v1/news", newsRoute);
+app.use("/api/v1/contact", contactRoute);
+app.use("/api/v1/store", storeRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
