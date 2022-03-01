@@ -36,11 +36,15 @@ const UserMenu = ({ token }) => {
     console.log(data);
     setConfirmLoading(true);
     axios
-      .post(`https://cocodamnoenclone.herokuapp.com/user/create-user`, data, {
-        headers: {
-          "x-access-token": token,
-        },
-      })
+      .post(
+        `https://cocodamnoenclone.herokuapp.com/api/v1/user/create-user`,
+        data,
+        {
+          headers: {
+            "x-access-token": token,
+          },
+        }
+      )
       .then(function (response) {
         // handle success
         if (response.status === 200) {
@@ -112,7 +116,7 @@ const UserMenu = ({ token }) => {
   ];
   const fetchUser = async () => {
     axios
-      .get("https://cocodamnoenclone.herokuapp.com/user")
+      .get("https://cocodamnoenclone.herokuapp.com/api/v1/user")
       .then(function (response) {
         // handle success
         console.log(response.data);
@@ -264,8 +268,12 @@ const UserMenu = ({ token }) => {
         columnsT={userColumns}
         datas={userData}
         field={fieldValue}
-        apiUpdate={"https://cocodamnoenclone.herokuapp.com/user/update-user/"}
-        apiDelete={"https://cocodamnoenclone.herokuapp.com/user/delete-user/"}
+        apiUpdate={
+          "https://cocodamnoenclone.herokuapp.com/api/v1/user/update-user/"
+        }
+        apiDelete={
+          "https://cocodamnoenclone.herokuapp.com/api/v1/user/delete-user/"
+        }
         token={token}
         success={success}
         error={error}

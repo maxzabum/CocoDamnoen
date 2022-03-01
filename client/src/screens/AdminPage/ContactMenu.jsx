@@ -39,7 +39,7 @@ const ContactMenu = ({ token }) => {
   });
   const fetchContact = async () => {
     axios
-      .get("https://cocodamnoenclone.herokuapp.com/contact")
+      .get("https://cocodamnoenclone.herokuapp.com/api/v1/contact")
       .then(function (response) {
         // handle success
         console.log(response.data);
@@ -71,7 +71,7 @@ const ContactMenu = ({ token }) => {
     console.log(data);
     axios
       .put(
-        `https://cocodamnoenclone.herokuapp.com/contact/update-contact/${contactData._id}`,
+        `https://cocodamnoenclone.herokuapp.com/api/v1/contact/update-contact/${contactData._id}`,
         data,
         {
           headers: {
