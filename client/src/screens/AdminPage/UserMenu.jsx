@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
 import EditableTable from "../../components/Table/Table";
 import { useForm, Controller } from "react-hook-form";
-import { Modal, Button as ButtonAntd } from "antd";
+import { Modal, Button as ButtonAntd, message } from "antd";
 import InputText from "../../components/InputText/InputText";
-const UserMenu = () => {
+const UserMenu = ({ token }) => {
   const [userData, setUserData] = useState([]);
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -38,13 +38,16 @@ const UserMenu = () => {
     axios
       .post(`https://cocodamnoenclone.herokuapp.com/user/create-user`, data, {
         headers: {
-          "x-access-token":
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA4NDZiY2ZjNzYwYWUwMjU4NTlkIiwidXNlcm5hbWUiOiJhYWEiLCJpYXQiOjE2NDU5NDQyOTYsImV4cCI6MTY0NTk1MTQ5Nn0.3BO1ecoeDK9PL1QXvn_cfuCek7dbxyx2brGr--aHDdg",
+          "x-access-token": token,
         },
       })
       .then(function (response) {
         // handle success
-
+        if (response.status === 200) {
+          success("Add");
+        } else {
+          error();
+        }
         fetchUser();
         reset();
         setVisible(false);
@@ -129,6 +132,12 @@ const UserMenu = () => {
       .then(function () {
         // always executed
       });
+  };
+  const success = (label) => {
+    message.success(`${label} item success.`, 10);
+  };
+  const error = () => {
+    message.error("Something worng. Please try again.", 10);
   };
   return (
     <div className="menu-content-container">
@@ -257,6 +266,9 @@ const UserMenu = () => {
         field={fieldValue}
         apiUpdate={"https://cocodamnoenclone.herokuapp.com/user/update-user/"}
         apiDelete={"https://cocodamnoenclone.herokuapp.com/user/delete-user/"}
+        token={token}
+        success={success}
+        error={error}
       />
     </div>
   );

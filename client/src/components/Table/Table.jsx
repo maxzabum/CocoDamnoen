@@ -9,23 +9,15 @@ import {
   Modal,
   Button,
   Space,
+  Upload,
+  message,
 } from "antd";
 import axios from "axios";
-import { ExclamationCircleOutlined } from "@ant-design/icons";
-
-const originData = [];
-
-for (let i = 0; i < 100; i++) {
-  originData.push({
-    key: i.toString(),
-    name: `Edrward ${i}`,
-    age: 32,
-    address: `London Park no. ${i}`,
-  });
-}
+import { ExclamationCircleOutlined, UploadOutlined } from "@ant-design/icons";
 
 const EditableCell = ({
   editing,
+  type,
   dataIndex,
   title,
   inputType,
@@ -34,7 +26,33 @@ const EditableCell = ({
   children,
   ...restProps
 }) => {
-  const inputNode = inputType === "number" ? <InputNumber /> : <Input />;
+  const props = {
+    name: "file",
+    beforeUpload: () => false,
+    onChange(info) {
+      if (info.file.status !== "uploading") {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === "done") {
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === "error") {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
+  let inputNode;
+  if (type === undefined) {
+    inputNode = <Input />;
+  } else if (type === "number") {
+    inputNode = <InputNumber />;
+  } else if (type === "image") {
+    inputNode = (
+      <Upload {...props}>
+        <Button icon={<UploadOutlined />}>Click to Upload</Button>
+      </Upload>
+    );
+  }
+  console.log("fdsfsdf", type);
   return (
     <td {...restProps}>
       {editing ? (
@@ -59,7 +77,16 @@ const EditableCell = ({
   );
 };
 
-const EditableTable = ({ columnsT, datas, field, apiUpdate, apiDelete }) => {
+const EditableTable = ({
+  columnsT,
+  datas,
+  field,
+  apiUpdate,
+  apiDelete,
+  token,
+  success,
+  error,
+}) => {
   const [form] = Form.useForm();
   const [data, setData] = useState(datas);
   const [editingKey, setEditingKey] = useState("");
@@ -96,11 +123,15 @@ const EditableTable = ({ columnsT, datas, field, apiUpdate, apiDelete }) => {
         axios
           .delete(`${apiDelete}${record.key}`, {
             headers: {
-              "x-access-token":
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA4NDZiY2ZjNzYwYWUwMjU4NTlkIiwidXNlcm5hbWUiOiJhYWEiLCJpYXQiOjE2NDU5NDQyOTYsImV4cCI6MTY0NTk1MTQ5Nn0.3BO1ecoeDK9PL1QXvn_cfuCek7dbxyx2brGr--aHDdg",
+              "x-access-token": token,
             },
           })
           .then(function (response) {
+            if (response.status === 200) {
+              success("Delete");
+            } else {
+              error();
+            }
             const _data = data.filter((_data) => _data.key !== record.key);
             setData([..._data]);
             // handle success
@@ -122,16 +153,36 @@ const EditableTable = ({ columnsT, datas, field, apiUpdate, apiDelete }) => {
     setEditingKey("");
   };
   const saveToApi = async (key, index) => {
-    // console.log("index", index);
+    // console.log("index", index.image.fileList[0].originFileObj);
+    let form = new FormData();
+    for (const [key, value] of Object.entries(index)) {
+      console.log(`${key}: ${value}`);
+      if (key === "image") {
+        if (index[key].fileList !== undefined) {
+          const _file = index[key].fileList[0].originFileObj;
+          form.append(key, _file);
+        }
+      } else {
+        form.append(key, value);
+      }
+    }
+    // form.append("image", data.image);
+    // form.append("description", data.description);
+    // form.append("title", data.title);
+    // form.append("type", data.type);
     axios
-      .put(`${apiUpdate}${key}`, index, {
+      .put(`${apiUpdate}${key}`, form, {
         headers: {
-          "x-access-token":
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIwOTA4NDZiY2ZjNzYwYWUwMjU4NTlkIiwidXNlcm5hbWUiOiJhYWEiLCJpYXQiOjE2NDU5NDQyOTYsImV4cCI6MTY0NTk1MTQ5Nn0.3BO1ecoeDK9PL1QXvn_cfuCek7dbxyx2brGr--aHDdg",
+          "x-access-token": token,
         },
       })
       .then(function (response) {
         // handle success
+        if (response.status === 200) {
+          success("Update");
+        } else {
+          error();
+        }
         // console.log(response.data);
       })
       .catch(function (error) {
@@ -144,9 +195,15 @@ const EditableTable = ({ columnsT, datas, field, apiUpdate, apiDelete }) => {
   };
   const save = async (key) => {
     try {
-      const row = await form.validateFields();
+      let row = await form.validateFields();
       const newData = [...data];
       const index = newData.findIndex((item) => key === item.key);
+      console.log("rowrow", row);
+
+      // if (row.image !== undefined) {
+      //   row.image = row.image.fileList[0].originFileObj;
+      // }
+      // console.log("rowrow", row);
 
       if (index > -1) {
         const item = newData[index];
@@ -248,6 +305,7 @@ const EditableTable = ({ columnsT, datas, field, apiUpdate, apiDelete }) => {
               dataIndex: col.dataIndex,
               title: col.title,
               editing: isEditing(record),
+              type: col.type,
             }),
           };
         })}

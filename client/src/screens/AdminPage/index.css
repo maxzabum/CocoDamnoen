@@ -30,3 +30,10 @@
 .menu-content-container .text-header {
   font-size: 24px;
 }
+.menu-content-container .ant-row {
+  row-gap: 18px !important;
+}
+/* .image-logo {
+  max-width: 70px;
+  width: 100%;
+} */
