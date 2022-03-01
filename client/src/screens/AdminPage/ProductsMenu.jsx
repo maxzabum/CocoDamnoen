@@ -62,7 +62,7 @@ const ProductsMenu = ({ token }) => {
     setConfirmLoading(true);
     axios
       .post(
-        `https://cocodamnoenclone.herokuapp.com/product/create-product`,
+        `https://cocodamnoenclone.herokuapp.com/api/v1/product/create-product`,
         form,
         {
           headers: {
@@ -133,14 +133,14 @@ const ProductsMenu = ({ token }) => {
       render: (image) => (
         <Image
           width={100}
-          src={`https://cocodamnoenclone.herokuapp.com/${image}`}
+          src={`https://cocodamnoenclone.herokuapp.com/api/v1/${image}`}
         />
       ),
     },
   ];
   const fetchUser = async () => {
     axios
-      .get("https://cocodamnoenclone.herokuapp.com/product")
+      .get("https://cocodamnoenclone.herokuapp.com/api/v1/product")
       .then(function (response) {
         // handle success
         console.log(response.data);
@@ -284,10 +284,10 @@ const ProductsMenu = ({ token }) => {
         datas={userData}
         field={fieldValue}
         apiUpdate={
-          "https://cocodamnoenclone.herokuapp.com/product/update-product/"
+          "https://cocodamnoenclone.herokuapp.com/api/v1/product/update-product/"
         }
         apiDelete={
-          "https://cocodamnoenclone.herokuapp.com/product/delete-product/"
+          "https://cocodamnoenclone.herokuapp.com/api/v1/product/delete-product/"
         }
         token={token}
         success={success}

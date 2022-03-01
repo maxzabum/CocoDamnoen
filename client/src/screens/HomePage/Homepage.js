@@ -21,7 +21,7 @@ import axios from "axios";
 const Homepage = ({ screenWidth, ...props }) => {
   useEffect(() => {
     axios
-      .get("https://cocodamnoenclone.herokuapp.com/user")
+      .get("https://cocodamnoenclone.herokuapp.com/api/v1/user")
       .then(function (response) {
         // handle success
         console.log(response);

@@ -26,7 +26,7 @@ const LoginPage = () => {
   const onSubmit = (data) => {
     const cookies = Cookie();
     axios
-      .post(`https://cocodamnoenclone.herokuapp.com/user/login`, data)
+      .post(`https://cocodamnoenclone.herokuapp.com/api/v1/user/login`, data)
       .then(function (response) {
         // handle success
         cookies.set("token", response.data.token);

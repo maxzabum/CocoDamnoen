@@ -71,11 +71,15 @@ const NewsMenu = ({ token }) => {
 
     setConfirmLoading(true);
     axios
-      .post(`https://cocodamnoenclone.herokuapp.com/news/create-news`, form, {
-        headers: {
-          "x-access-token": token,
-        },
-      })
+      .post(
+        `https://cocodamnoenclone.herokuapp.com/api/v1/news/create-news`,
+        form,
+        {
+          headers: {
+            "x-access-token": token,
+          },
+        }
+      )
       .then(function (response) {
         // handle success
         if (response.status === 200) {
@@ -135,7 +139,7 @@ const NewsMenu = ({ token }) => {
       render: (image) => (
         <Image
           width={100}
-          src={`https://cocodamnoenclone.herokuapp.com/${image}`}
+          src={`https://cocodamnoenclone.herokuapp.com/api/v1/${image}`}
         />
       ),
       editable: true,
@@ -143,7 +147,7 @@ const NewsMenu = ({ token }) => {
   ];
   const fetchUser = async () => {
     axios
-      .get("https://cocodamnoenclone.herokuapp.com/news")
+      .get("https://cocodamnoenclone.herokuapp.com/api/v1/news")
       .then(function (response) {
         // handle success
         console.log(response.data);
@@ -280,8 +284,12 @@ const NewsMenu = ({ token }) => {
         columnsT={userColumns}
         datas={userData}
         field={fieldValue}
-        apiUpdate={"https://cocodamnoenclone.herokuapp.com/news/update-news/"}
-        apiDelete={"https://cocodamnoenclone.herokuapp.com/news/delete-news/"}
+        apiUpdate={
+          "https://cocodamnoenclone.herokuapp.com/api/v1/news/update-news/"
+        }
+        apiDelete={
+          "https://cocodamnoenclone.herokuapp.com/api/v1/news/delete-news/"
+        }
         token={token}
         success={success}
         error={error}
