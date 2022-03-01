@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300&display=swap");
+#components-layout-demo-side .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+.main-admin-layout-container * {
+  font-family: "Kanit", sans-serif;
+}
+.ant-modal-root * {
+  font-family: "Kanit", sans-serif;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.menu-content-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.menu-content-container .button-container {
+  align-self: flex-end;
+}
+.menu-content-container .text-header {
+  font-size: 24px;
+}
+.menu-content-container .ant-row {
+  row-gap: 18px !important;
+}
+/* .image-logo {
+  max-width: 70px;
+  width: 100%;
+} */

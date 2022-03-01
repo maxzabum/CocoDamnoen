@@ -10,6 +10,10 @@
   margin: 0;
   font-family: Baby-girly;
 }
+p,ul{
+  margin: 0!important;
+  font-family: Baby-girly;
+}
 .App {
   display: flex;
   height: 100vh;
