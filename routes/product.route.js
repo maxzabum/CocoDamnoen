@@ -1,7 +1,6 @@
 let mongoose = require("mongoose"),
   express = require("express"),
   router = express.Router();
-
 const auth = require("../middleware/auth");
 // upload image
 const multer = require("multer");
@@ -11,7 +10,7 @@ const storage = multer.diskStorage({
     cb(null, "./uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, new Date().toDateString() + file.originalname);
+    cb(null, new Date().toDateString().replace(/\s/g, "") + file.originalname);
   },
 });
 
@@ -41,7 +40,8 @@ router
       _id: new mongoose.Types.ObjectId(),
       title: req.body.title,
       description: req.body.description,
-      image: req.file.path,
+      image: req.file.path.replace(/\s/g, ""),
+      type: req.body.type,
       create_date: Date.now(),
     });
     // res.json(product);
@@ -78,26 +78,51 @@ router.route("/edit-product/:id").get((req, res) => {
 });
 
 // Update product
-router.route("/update-product/:id").put(auth, (req, res, next) => {
-  productSchema.findByIdAndUpdate(
-    req.params.id,
-    {
-      title: req.body.title,
-      description: req.body.description,
-      image: req.file.path,
-      modify_date: Date.now(),
-    },
-    (error, data) => {
-      if (error) {
-        return next(error);
-        console.log(error);
-      } else {
-        res.json(data);
-        console.log("product updated successfully");
-      }
+router
+  .route("/update-product/:id")
+  .put(upload.single("image"), auth, (req, res, next) => {
+    try {
+      productSchema.findByIdAndUpdate(
+        req.params.id,
+        {
+          title: req.body.title,
+          description: req.body.description,
+          image: req.file.path,
+          type: req.body.type,
+          modify_date: Date.now(),
+        },
+        (error, data) => {
+          if (error) {
+            return next(error);
+            console.log(error);
+          } else {
+            res.json(data);
+            console.log("dds" + data);
+            console.log("product  successfully");
+          }
+        }
+      );
+    } catch (error) {
+      productSchema.findByIdAndUpdate(
+        req.params.id,
+        {
+          title: req.body.title,
+          description: req.body.description,
+          type: req.body.type,
+          modify_date: Date.now(),
+        },
+        (error, data) => {
+          if (error) {
+            return next(error);
+            console.log(error);
+          } else {
+            res.json(data);
+            console.log("product updated successfully");
+          }
+        }
+      );
     }
-  );
-});
+  });
 
 // Delete student
 router.route("/delete-product/:id").delete(auth, (req, res, next) => {

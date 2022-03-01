@@ -1,6 +1,7 @@
 let mongoose = require("mongoose"),
   express = require("express"),
-  router = express.Router();
+  router = express.Router(),
+  jwtDecode = express("jwt-decode");
 
 // User model
 require("dotenv").config();
@@ -79,11 +80,16 @@ router.route("/login").post(async (req, res) => {
       const token = jwt.sign({ user_id: user._id, username }, "qwertyuiop", {
         expiresIn: "2h",
       });
+      const timeout = (decoded = jwt.decode(token).exp);
+      console.log(timeout);
       user.token = token;
       const _user = {
         user,
         token,
+        timeout,
       };
+      const expiry = token.created_at + token.expires_in;
+
       res.status(200).json(_user);
     }
   } catch (err) {

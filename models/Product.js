@@ -11,6 +11,9 @@ let productSchema = new Schema(
     image: {
       type: String,
     },
+    type: {
+      type: String,
+    },
     create_date: {
       type: Date,
     },

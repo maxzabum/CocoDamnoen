@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     cb(null, "./uploads/");
   },
   filename: function (req, file, cb) {
-    cb(null, new Date().toDateString() + file.originalname);
+    cb(null, new Date().toDateString().replace(/\s/g, "") + file.originalname);
   },
 });
 
@@ -81,25 +81,44 @@ router.route("/edit-news/:id").get((req, res) => {
 router
   .route("/update-news/:id")
   .put(upload.single("image"), auth, (req, res, next) => {
-    newsSchema.findByIdAndUpdate(
-      req.params.id,
-      {
-        title: req.body.title,
-        description: req.body.description,
-        image: req.file.path,
-        type: req.body.type,
-        modify_date: Date.now(),
-      },
-      (error, data) => {
-        if (error) {
-          return next(error);
-          console.log(error);
-        } else {
-          res.json(data);
-          console.log("product updated successfully");
+    try {
+      newsSchema.findByIdAndUpdate(
+        req.params.id,
+        {
+          title: req.body.title,
+          description: req.body.description,
+          image: req.file.path,
+          type: req.body.type,
+          modify_date: Date.now(),
+        },
+        (error, data) => {
+          if (error) {
+            return next(error);
+          } else {
+            res.json(data);
+            console.log("product updated successfully");
+          }
         }
-      }
-    );
+      );
+    } catch (error) {
+      newsSchema.findByIdAndUpdate(
+        req.params.id,
+        {
+          title: req.body.title,
+          description: req.body.description,
+          type: req.body.type,
+          modify_date: Date.now(),
+        },
+        (error, data) => {
+          if (error) {
+            return next(error);
+          } else {
+            res.json(data);
+            console.log("product updated successfully");
+          }
+        }
+      );
+    }
   });
 
 // Delete news
